@@ -1,21 +1,21 @@
 resources:
-## REPO of VISUALIZER code
-#  - name: dv-repo
-#    type: gitRepo
-#    integration: "avinci-gh"
-#    source:
-#      name: avinci/dv
-#      branch: master
-#
-## Docker Image for VISUALIZER
-#  - name: dv-img
-#    type: image
-#    integration: avinci-dh
-#    source:
-#      name: "avinci/dv"
-#      isPull: false
-#      tag: "latest"
-#
+# REPO of VISUALIZER code
+  - name: dv-repo
+    type: gitRepo
+    integration: "avinci-gh"
+    source:
+      name: avinci/dv
+      branch: master
+
+# Docker Image for VISUALIZER
+  - name: dv-img
+    type: image
+    integration: avinci-dh
+    source:
+      name: "avinci/dv"
+      isPull: false
+      tag: "latest"
+
 ## Docker Image Options for VISUALIZER
 #  - name: dv-img-opts
 #    type: dockerOptions

@@ -1,11 +1,11 @@
 jobs:
-## CI for VISUALIZER
-#  - name: dv-ci
-#    type: runCI
-#    steps:
-#      - GET: dv-repo
-#      - PUT: dv-img
-#
+# CI for VISUALIZER
+  - name: dv-ci
+    type: runCI
+    steps:
+      - GET: dv-repo
+      - PUT: dv-img
+
 ## manifest gen for VISUALIZER
 #  - name: dv-man
 #    type: manifest
