@@ -81,5 +81,5 @@ resources:
     type: gitRepo
     integration: "avinci-gh"
     source:
-      name: avinci/prod-pipelines
+      name: avinci/prod
       branch: master
