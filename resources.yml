@@ -77,7 +77,7 @@ resources:
         ENVIRONMENT: "test-aws"
 
 # REPO for PROD configs
-  - name: prod-repo
+  - name: prod-repo01
     type: gitRepo
     integration: "avinci-gh"
     source:
