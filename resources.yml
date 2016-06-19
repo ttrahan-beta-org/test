@@ -40,7 +40,7 @@ resources:
       name : "test-aws"
       region: "us-east-1"
 
- REPO of BOX code
+# REPO of BOX code
   - name: box-repo
     type: gitRepo
     integration: "avinci-gh"
