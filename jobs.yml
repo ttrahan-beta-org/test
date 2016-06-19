@@ -28,7 +28,7 @@ jobs:
       - GET: box-repo
       - PUT: box-img
 
-## manifest gen for BOX
+# manifest gen for BOX
 #  - name: box-man
 #    type: manifest
 #    steps:
