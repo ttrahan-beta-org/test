@@ -40,23 +40,23 @@ resources:
       name : "test-aws"
       region: "us-east-1"
 
-# REPO of BOX code
-#  - name: box-repo
-#    type: gitRepo
-#    integration: "avinci-gh"
-#    source:
-#      name: avinci/box
-#      branch: master
-#
-## Docker Image for BOX
-#  - name: box-img
-#    type: image
-#    integration: avinci-dh
-#    source:
-#      name: "avinci/box"
-#      isPull: false
-#      tag: "latest"
-#
+ REPO of BOX code
+  - name: box-repo
+    type: gitRepo
+    integration: "avinci-gh"
+    source:
+      name: avinci/box
+      branch: master
+
+# Docker Image for BOX
+  - name: box-img
+    type: image
+    integration: avinci-dh
+    source:
+      name: "avinci/box"
+      isPull: false
+      tag: "latest"
+
 ## Docker Image Options for BOX
 #  - name: box-img-opts
 #    type: dockerOptions

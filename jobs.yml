@@ -21,13 +21,13 @@ jobs:
       - GET: dv-params
       - GET: env-test-aws
 
-## CI for BOX
-#  - name: box-ci
-#    type: runCI
-#    steps:
-#      - GET: box-repo
-#      - PUT: box-img
-#
+# CI for BOX
+  - name: box-ci
+    type: runCI
+    steps:
+      - GET: box-repo
+      - PUT: box-img
+
 ## manifest gen for BOX
 #  - name: box-man
 #    type: manifest
