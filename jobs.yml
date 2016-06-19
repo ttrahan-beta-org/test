@@ -13,14 +13,14 @@ jobs:
       - GET: dv-img
       - GET: dv-img-opts
 
-## TEST deployment for VISUALIZER
-#  - name: dv-test
-#    type: ecsDeploy
-#    steps:
-#      - GET: dv-man
-#      - GET: dv-params
-#      - GET: env-test-aws
-#
+# TEST deployment for VISUALIZER
+  - name: dv-test
+    type: ecsDeploy
+    steps:
+      - GET: dv-man
+      - GET: dv-params
+      - GET: env-test-aws
+
 ## CI for BOX
 #  - name: box-ci
 #    type: runCI
