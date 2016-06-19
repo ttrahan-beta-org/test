@@ -76,10 +76,10 @@ resources:
         DB_PASSWORD: "ayeaye"
         ENVIRONMENT: "test-aws"
 
-## REPO for PROD configs
-#  - name: prod-repo
-#    type: gitRepo
-#    integration: "avinci-gh"
-#    source:
-#      name: avinci/prod-pipelines
-#      branch: master
+# REPO for PROD configs
+  - name: prod-repo
+    type: gitRepo
+    integration: "avinci-gh"
+    source:
+      name: avinci/prod-pipelines
+      branch: master
