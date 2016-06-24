@@ -44,17 +44,17 @@ resources:
       memory: 64
       cpu-shares: 512
 
-## PROD REPO for CONFIG
-#
-## REPO for PROD configs
-#  - name: prod-repo01
-#    type: gitRepo
-#    integration: "avinci-gh"
-#    source:
-#      name: avinci/prod
-#      branch: master
-#
-#
+# PROD REPO for CONFIG
+
+# REPO for PROD configs
+  - name: prod-repo01
+    type: gitRepo
+    integration: "avinci-gh"
+    source:
+      name: avinci/prod
+      branch: master
+
+
 
 
 # VISUALIZER CODE
