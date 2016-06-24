@@ -14,7 +14,7 @@ resources:
     source:
       name: "avinci/dv"
       isPull: false
-      tag: "master.4"
+      tag: "master.5"
 
 # Docker Image Options for VISUALIZER
   - name: dv-img-opts
@@ -40,46 +40,46 @@ resources:
       name : "test-aws"
       region: "us-east-1"
 
-## REPO of BOX code
-#  - name: box-repo
-#    type: gitRepo
-#    integration: "avinci-gh"
-#    source:
-#      name: avinci/box
-#      branch: master
-#
-## Docker Image for BOX
-#  - name: box-img
-#    type: image
-#    integration: avinci-dh
-#    source:
-#      name: "avinci/box"
-#      isPull: false
-#      tag: "master.3"
-#
-## Docker Image Options for BOX
-#  - name: box-img-opts
-#    type: dockerOptions
-#    source:
-#      memory: 64
-#      cpu-shares: 512
-#
-## TEST env vars for BOX
-#  - name: box-t-params
-#    type: params
-#    source:
-#      params:
-#        DB_HOST: "ds015700.mlab.com"
-#        DB_NAME: "ayeaye"
-#        DB_PORT: "15700"
-#        DB_USERNAME: "ayeaye"
-#        DB_PASSWORD: "ayeaye"
-#        ENVIRONMENT: "test-aws"
-#
-## REPO for PROD configs
-#  - name: prod-repo01
-#    type: gitRepo
-#    integration: "avinci-gh"
-#    source:
-#      name: avinci/prod
-#      branch: master
+# REPO of BOX code
+  - name: box-repo
+    type: gitRepo
+    integration: "avinci-gh"
+    source:
+      name: avinci/box
+      branch: master
+
+# Docker Image for BOX
+  - name: box-img
+    type: image
+    integration: avinci-dh
+    source:
+      name: "avinci/box"
+      isPull: false
+      tag: "master.3"
+
+# Docker Image Options for BOX
+  - name: box-img-opts
+    type: dockerOptions
+    source:
+      memory: 64
+      cpu-shares: 512
+
+# TEST env vars for BOX
+  - name: box-t-params
+    type: params
+    source:
+      params:
+        DB_HOST: "ds015700.mlab.com"
+        DB_NAME: "ayeaye"
+        DB_PORT: "15700"
+        DB_USERNAME: "ayeaye"
+        DB_PASSWORD: "ayeaye"
+        ENVIRONMENT: "test-aws"
+
+# REPO for PROD configs
+  - name: prod-repo01
+    type: gitRepo
+    integration: "avinci-gh"
+    source:
+      name: avinci/prod
+      branch: master
