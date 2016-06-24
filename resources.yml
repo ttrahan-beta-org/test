@@ -14,7 +14,7 @@ resources:
     source:
       name: "avinci/dv"
       isPull: false
-      tag: "master.5"
+      tag: "master.6"
 
 # Docker Image Options for VISUALIZER
   - name: dv-img-opts
@@ -55,7 +55,7 @@ resources:
     source:
       name: "avinci/box"
       isPull: false
-      tag: "master.3"
+      tag: "master.7"
 
 # Docker Image Options for BOX
   - name: box-img-opts
