@@ -28,14 +28,14 @@ resources:
         DB_PASSWORD: "ayeaye"
         ENVIRONMENT: "test-aws"
 
-## TEST AWS cluster
-#  - name: env-test-aws
-#    type: ecsCluster
-#    integration: avi-ecs
-#    source:
-#      name : "test-aws"
-#      region: "us-east-1"
-#
+# TEST AWS cluster
+  - name: env-test-aws
+    type: ecsCluster
+    integration: avi-ecs
+    source:
+      name : "test-aws"
+      region: "us-east-1"
+
 
 # Docker Image Options for BOX
   - name: box-img-opts

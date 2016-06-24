@@ -13,13 +13,13 @@ jobs:
       - GET: box-img
       - GET: box-img-opts
 
-## TEST deployment for BOX
-#  - name: box-test-aws
-#    type: ecsDeploy
-#    steps:
-#      - GET: box-man
-#      - GET: box-t-params
-#      - GET: env-test-aws
+# TEST deployment for BOX
+  - name: box-test-aws
+    type: ecsDeploy
+    steps:
+      - GET: box-man
+      - GET: box-t-params
+      - GET: env-test-aws
 
 
 
