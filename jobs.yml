@@ -6,13 +6,13 @@ jobs:
       - GET: box-repo
       - PUT: box-img
 
-## manifest gen for BOX
-#  - name: box-man
-#    type: manifest
-#    steps:
-#      - GET: box-img
-#      - GET: box-img-opts
-#
+# manifest gen for BOX
+  - name: box-man
+    type: manifest
+    steps:
+      - GET: box-img
+      - GET: box-img-opts
+
 ## TEST deployment for BOX
 #  - name: box-test-aws
 #    type: ecsDeploy

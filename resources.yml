@@ -16,12 +16,17 @@ resources:
       isPull: false
       tag: "master.7"
 
-# Docker Image Options for BOX
-  - name: box-img-opts
-    type: dockerOptions
+# TEST env vars for BOX
+  - name: box-t-params
+    type: params
     source:
-      memory: 64
-      cpu-shares: 512
+      params:
+        DB_HOST: "ds015700.mlab.com"
+        DB_NAME: "ayeaye"
+        DB_PORT: "15700"
+        DB_USERNAME: "ayeaye"
+        DB_PASSWORD: "ayeaye"
+        ENVIRONMENT: "test-aws"
 
 ## TEST AWS cluster
 #  - name: env-test-aws
@@ -31,18 +36,14 @@ resources:
 #      name : "test-aws"
 #      region: "us-east-1"
 #
-## TEST env vars for BOX
-#  - name: box-t-params
-#    type: params
-#    source:
-#      params:
-#        DB_HOST: "ds015700.mlab.com"
-#        DB_NAME: "ayeaye"
-#        DB_PORT: "15700"
-#        DB_USERNAME: "ayeaye"
-#        DB_PASSWORD: "ayeaye"
-#        ENVIRONMENT: "test-aws"
-#
+
+# Docker Image Options for BOX
+  - name: box-img-opts
+    type: dockerOptions
+    source:
+      memory: 64
+      cpu-shares: 512
+
 ## REPO for PROD configs
 #  - name: prod-repo01
 #    type: gitRepo
