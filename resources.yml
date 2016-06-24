@@ -14,45 +14,47 @@ resources:
     source:
       name: "avinci/box"
       isPull: false
-      tag: "master.7"
+      tag: "master.8"
 
-# TEST env vars for BOX
-  - name: box-t-params
-    type: params
-    source:
-      params:
-        DB_HOST: "ds015700.mlab.com"
-        DB_NAME: "ayeaye"
-        DB_PORT: "15700"
-        DB_USERNAME: "ayeaye"
-        DB_PASSWORD: "ayeaye"
-        ENVIRONMENT: "test-aws"
-
-# TEST AWS cluster
-  - name: env-test-aws
-    type: ecsCluster
-    integration: avi-ecs
-    source:
-      name : "test-aws"
-      region: "us-east-1"
-
-
-# Docker Image Options for BOX
-  - name: box-img-opts
-    type: dockerOptions
-    source:
-      memory: 64
-      cpu-shares: 512
-
-# REPO for PROD configs
-  - name: prod-repo01
-    type: gitRepo
-    integration: "avinci-gh"
-    source:
-      name: avinci/prod
-      branch: master
-
-
+## TEST env vars for BOX
+#  - name: box-t-params
+#    type: params
+#    source:
+#      params:
+#        DB_HOST: "ds015700.mlab.com"
+#        DB_NAME: "ayeaye"
+#        DB_PORT: "15700"
+#        DB_USERNAME: "ayeaye"
+#        DB_PASSWORD: "ayeaye"
+#        ENVIRONMENT: "test-aws"
+#
+## TEST AWS cluster
+#  - name: env-test-aws
+#    type: ecsCluster
+#    integration: avi-ecs
+#    source:
+#      name : "test-aws"
+#      region: "us-east-1"
+#
+#
+## Docker Image Options for BOX
+#  - name: box-img-opts
+#    type: dockerOptions
+#    source:
+#      memory: 64
+#      cpu-shares: 512
+#
+## PROD REPO for CONFIG
+#
+## REPO for PROD configs
+#  - name: prod-repo01
+#    type: gitRepo
+#    integration: "avinci-gh"
+#    source:
+#      name: avinci/prod
+#      branch: master
+#
+#
 
 
 # VISUALIZER CODE
