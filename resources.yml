@@ -1,5 +1,5 @@
 resources:
-# TEST environment - Triton cluster
+# TEST env - Triton cluster
   - name: env-test-triton
     type: tripubCluster
     integration: ttrahan-tpc
@@ -52,8 +52,6 @@ resources:
 #     source:
 #       name: ttrahan/prod
 #       branch: triton
-
-
 
 
 # VISUALIZER CODE
