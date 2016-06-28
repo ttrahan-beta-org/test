@@ -2,38 +2,38 @@ resources:
 # REPO of BOX code
   - name: box-repo
     type: gitRepo
-    integration: "avinci-gh"
+    integration: ttrahan-gh
     source:
-      name: avinci/box
-      branch: master
+      name: ttrahan/box
+      branch: triton
 
 # Docker Image for BOX
   - name: box-img
     type: image
-    integration: avinci-dh
+    integration: ttrahan-dh
     source:
-      name: "avinci/box"
+      name: "ttrahan/box"
       isPull: false
-      tag: "master.9"
+      tag: "triton.1"
 
 # TEST env vars for BOX
   - name: box-t-params
     type: params
     source:
       params:
-        DB_HOST: "ds015700.mlab.com"
-        DB_NAME: "ayeaye"
-        DB_PORT: "15700"
-        DB_USERNAME: "ayeaye"
-        DB_PASSWORD: "ayeaye"
-        ENVIRONMENT: "test-aws"
+        DB_HOST: "ds017544.mlab.com"
+        DB_NAME: "box-pipev2"
+        DB_PORT: "17544"
+        DB_USERNAME: "demo"
+        DB_PASSWORD: "demo"
+        ENVIRONMENT: "test-triton"
 
-# TEST AWS cluster
-  - name: env-test-aws
-    type: ecsCluster
-    integration: avi-ecs
+# TEST Triton cluster
+  - name: env-test-triton
+    type: tripubCluster
+    integration: ttrahan-tpc
     source:
-      name : "test-aws"
+      name : "test-triton"
       region: "us-east-1"
 
 
@@ -49,45 +49,45 @@ resources:
 # REPO for PROD configs
   - name: prod-repo01
     type: gitRepo
-    integration: "avinci-gh"
+    integration: ttrahan-gh
     source:
-      name: avinci/prod
-      branch: master
+      name: ttrahan/prod
+      branch: triton
 
 
 
 
 # VISUALIZER CODE
 
-## REPO of VISUALIZER code
-#  - name: dv-repo
-#    type: gitRepo
-#    integration: "avinci-gh"
-#    source:
-#      name: avinci/dv
-#      branch: master
-#
-## Docker Image for VISUALIZER
-#  - name: dv-img
-#    type: image
-#    integration: avinci-dh
-#    source:
-#      name: "avinci/dv"
-#      isPull: false
-#      tag: "master.6"
-#
-## Docker Image Options for VISUALIZER
-#  - name: dv-img-opts
-#    type: dockerOptions
-#    source:
-#      memory: 64
-#      cpu-shares: 256
-#      portMappings:
-#        - 80:80
-#
-## env vars for VISUALIZER
-#  - name: dv-params
-#    type: params
-#    source:
-#      params:
-#        MONGO_API_URL: "https://api.mlab.com/api/1/databases/ayeaye/collections/boxes?apiKey=9hYmSC1dYH1CBu2PjBB5Vi5ff6OJyD9x"
+# REPO of VISUALIZER code
+ - name: dv-repo
+   type: gitRepo
+   integration: ttrahan-dh
+   source:
+     name: ttrahan/dv
+     branch: master
+
+# Docker Image for VISUALIZER
+ - name: dv-img
+   type: image
+   integration: ttrahan-dh
+   source:
+     name: ttrahan/dv
+     isPull: false
+     tag: "triton.1"
+
+# Docker Image Options for VISUALIZER
+ - name: dv-img-opts
+   type: dockerOptions
+   source:
+     memory: 64
+     cpu-shares: 256
+     portMappings:
+       - 80:80
+
+# env vars for VISUALIZER
+ - name: dv-params
+   type: params
+   source:
+     params:
+       MONGO_API_URL: "https://api.mlab.com/api/1/databases/pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
