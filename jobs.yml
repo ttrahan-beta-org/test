@@ -30,7 +30,7 @@ jobs:
 # VISUALIZER CODE test
 
 # CI for VISUALIZER
- - name: dv-ci-02
+ - name: dv-ci-03
    type: runCI
    steps:
      - GET: dv-repo
