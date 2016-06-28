@@ -14,12 +14,12 @@
 #       - GET: box-img-opts
 #
 # # TEST deployment for BOX
-#   - name: box-test-aws
+#   - name: box-test-triton
 #     type: ecsDeploy
 #     steps:
 #       - GET: box-man
 #       - GET: box-t-params
-#       - GET: env-test-aws
+#       - GET: env-test-triton
 
 
 
@@ -29,24 +29,24 @@
 
 # VISUALIZER CODE
 
-# CI for VISUALIZER
- - name: dv-ci
-   type: runCI
-   steps:
-     - GET: dv-repo
-     - PUT: dv-img
-
-# manifest gen for VISUALIZER
- - name: dv-man
-   type: manifest
-   steps:
-     - GET: dv-img
-     - GET: dv-img-opts
-
-# TEST deployment for VISUALIZER
- - name: dv-test
-   type: ecsDeploy
-   steps:
-     - GET: dv-man
-     - GET: dv-params
-     - GET: env-test-aws
+# # CI for VISUALIZER
+#  - name: dv-ci
+#    type: runCI
+#    steps:
+#      - GET: dv-repo
+#      - PUT: dv-img
+#
+# # manifest gen for VISUALIZER
+#  - name: dv-man
+#    type: manifest
+#    steps:
+#      - GET: dv-img
+#      - GET: dv-img-opts
+#
+# # TEST deployment for VISUALIZER
+#  - name: dv-test
+#    type: tripubDeploy
+#    steps:
+#      - GET: dv-man
+#      - GET: dv-params
+#      - GET: env-test-triton
