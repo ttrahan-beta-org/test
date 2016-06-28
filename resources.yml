@@ -1,4 +1,12 @@
 resources:
+# TEST environment - Triton cluster
+  - name: env-test-triton
+    type: tripubCluster
+    integration: ttrahan-tpc
+    source:
+      name : "test-triton"
+      region: "us-east-1"
+
 # # REPO of BOX code
 #   - name: box-repo
 #     type: gitRepo
@@ -27,16 +35,7 @@ resources:
 #         DB_USERNAME: "demo"
 #         DB_PASSWORD: "demo"
 #         ENVIRONMENT: "test-triton"
-#
-# # TEST Triton cluster
-#   - name: env-test-triton
-#     type: tripubCluster
-#     integration: ttrahan-tpc
-#     source:
-#       name : "test-triton"
-#       region: "us-east-1"
-#
-#
+
 # # Docker Image Options for BOX
 #   - name: box-img-opts
 #     type: dockerOptions
