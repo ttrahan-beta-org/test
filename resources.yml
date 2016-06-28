@@ -1,11 +1,11 @@
 resources:
-# TEST env - Triton cluster
-  - name: env-test-triton
-    type: tripubCluster
-    integration: ttrahan-tpc
-    source:
-      name : "test-triton"
-      region: "us-east-1"
+# # TEST env - Triton cluster
+#   - name: env-test-triton
+#     type: tripubCluster
+#     integration: ttrahan-tpc
+#     source:
+#       name : "test-triton"
+#       region: "us-east-1"
 
 # # REPO of BOX code
 #   - name: box-repo
