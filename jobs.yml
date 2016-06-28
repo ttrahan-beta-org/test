@@ -1,4 +1,4 @@
-# jobs:
+jobs:
 # # CI for BOX
 #   - name: box-ci
 #     type: runCI
