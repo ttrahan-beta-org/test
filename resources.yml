@@ -8,11 +8,11 @@ resources:
 
 # VISUALIZER CODE
 # REPO of VISUALIZER code
-  - name: dv-repo04
+  - name: dv-repo05
     type: gitRepo
     integration: ttrahan-beta-gh
     source:
-      name: ttrahan/dv
+      name: ttrahan-beta/dv
       branch: triton
 
 # Docker Image for VISUALIZER
