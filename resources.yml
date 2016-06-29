@@ -37,7 +37,7 @@ resources:
 #
 # # PROD REPO for CONFIG
 # TEST env - Triton cluster
-  - name: env-test-triton03
+  - name: env-test-triton
     type: tripubCluster
     integration: ttrahan-tpc
     source:

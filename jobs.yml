@@ -44,9 +44,9 @@ jobs:
       - GET: dv-img-opts
 
 # TEST deployment for VISUALIZER #
-  - name: dv-test02
+  - name: dv-test
     type: tripubDeploy
     steps:
       - GET: dv-man
       - GET: dv-params
-      - GET: env-test-triton03
+      - GET: env-test-triton
