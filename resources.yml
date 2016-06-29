@@ -1,10 +1,10 @@
 resources:
-# # TEST env - Triton cluster
-#   - name: env-test-triton
-#     type: tripubCluster
-#     integration: ttrahan-tpc
-#     source:
-#       region: "us-east-1"
+# TEST env - Triton cluster
+  - name: env-test-triton
+    type: tripubCluster
+    integration: ttrahan-tpc
+    source:
+      region: "us-east-1"
 
 # # REPO of BOX code
 #   - name: box-repo
@@ -56,34 +56,34 @@ resources:
 # VISUALIZER CODE
 
 # REPO of VISUALIZER code
-- name: dv-repo
-  type: gitRepo
-  integration: ttrahan-dh
-  source:
-    name: "ttrahan/dv"
-    branch: triton
+  - name: dv-repo
+    type: gitRepo
+    integration: ttrahan-dh
+    source:
+      name: "ttrahan/dv"
+      branch: triton
 
 # Docker Image for VISUALIZER
-- name: dv-img
-  type: image
-  integration: ttrahan-dh
-  source:
-    name: ttrahan/dv
-    isPull: false
-    tag: "triton.1"
+  - name: dv-img
+    type: image
+    integration: ttrahan-dh
+    source:
+      name: ttrahan/dv
+      isPull: false
+      tag: "triton.1"
 
 # Docker Image Options for VISUALIZER
-- name: dv-img-opts
-  type: dockerOptions
-  source:
-    memory: 64
-    cpu-shares: 256
-    portMappings:
-      - 80:80
+  - name: dv-img-opts
+    type: dockerOptions
+    source:
+      memory: 64
+      cpu-shares: 256
+      portMappings:
+        - 80:80
 
 # env vars for VISUALIZER
-- name: dv-params
-  type: params
-  source:
-    params:
-      MONGO_API_URL: "https://api.mlab.com/api/1/databases/pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
+  - name: dv-params
+    type: params
+    source:
+      params:
+        MONGO_API_URL: "https://api.mlab.com/api/1/databases/pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
