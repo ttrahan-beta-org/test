@@ -3,7 +3,7 @@ jobs:
 # jobs for the box demo pipelines from CI thru TEST environment
 
 ################################
-
+# 2)
 # VISUALIZER JOBS - test environment
 
 # CI for VISUALIZER
@@ -20,6 +20,7 @@ jobs:
       - GET: dv-img
       - GET: dv-img-opts
 
+# 3)
 # TEST deployment for VISUALIZER
   - name: dv-test
     type: tripubDeploy
@@ -31,7 +32,7 @@ jobs:
 ################################
 
 # BOX JOBS - test environment
-
+# 5)
 # CI for BOX
   - name: box-ci
     type: runCI
@@ -47,8 +48,8 @@ jobs:
       - GET: box-img-opts
 
 # TEST deployment for BOX
-  - name: box-test-triton
-    type: ecsDeploy
+  - name: box-test-triton-01
+    type: tripubDeploy
     steps:
       - GET: box-man
       - GET: box-t-params
