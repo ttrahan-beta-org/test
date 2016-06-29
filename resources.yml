@@ -1,10 +1,6 @@
 resources:
-# TEST env - TRITON CLUSTER
-  - name: env-test-triton
-    type: tripubCluster
-    integration: ttrahan-tpc
-    source:
-      region: "us-east-1"
+
+# resources for the box demo pipelines from CI thru Test environment
 
 ################################
 
@@ -41,13 +37,14 @@ resources:
         MONGO_API_URL: "https://api.mlab.com/api/1/databases/pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
 
 ################################
+
 # BOX RESOURCES
 # REPO of BOX code
   - name: box-repo
     type: gitRepo
-    integration: ttrahan-gh
+    integration: ttrahan-beta-gh
     source:
-      name: ttrahan/box
+      name: ttrahan-beta/box
       branch: triton
 
 # Docker Image for BOX
@@ -58,6 +55,13 @@ resources:
       name: "ttrahan/box"
       isPull: false
       tag: "triton.1"
+
+# Docker Image Options for BOX
+  - name: box-img-opts
+    type: dockerOptions
+    source:
+      memory: 64
+      cpu-shares: 512
 
 # TEST env vars for BOX
   - name: box-t-params
@@ -71,12 +75,14 @@ resources:
         DB_PASSWORD: "demo"
         ENVIRONMENT: "test-triton"
 
-# Docker Image Options for BOX
-  - name: box-img-opts
-    type: dockerOptions
+################################
+
+# TEST env - TRITON CLUSTER
+  - name: env-test-triton
+    type: tripubCluster
+    integration: ttrahan-tpc
     source:
-      memory: 64
-      cpu-shares: 512
+      region: "us-east-1"
 
 ################################
 
