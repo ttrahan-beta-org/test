@@ -2,4 +2,4 @@ language: none
 
 build:
   ci:
-    - true
+    - ls
