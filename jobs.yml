@@ -23,7 +23,7 @@ jobs:
 
 # 3) deploy visualizer to TEST
 # TEST deployment for VISUALIZER
-  - name: dv-test
+  - name: dv-test-02
     type: tripubDeploy
     steps:
       - GET: dv-man
