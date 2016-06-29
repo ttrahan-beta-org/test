@@ -4,7 +4,7 @@ resources:
 
 ################################
 
-# 1) add visualizer resources to pipeline
+# 1) add visualizer resources to pipeline for CI
 # VISUALIZER RESOURCES
 # REPO of VISUALIZER code
   - name: dv-repo
@@ -14,6 +14,7 @@ resources:
       name: ttrahan-beta/dv
       branch: triton
 
+# 2) add visualizer pipeline thru hub
 # Docker Image for VISUALIZER
   - name: dv-img
     type: image
@@ -30,13 +31,13 @@ resources:
       memory: 128
       publishAllPorts : true
 
-# # 3) deploy visualizer to TEST
-# # env vars for VISUALIZER
-#   - name: dv-params
-#     type: params
-#     source:
-#       params:
-#         MONGO_API_URL: "https://api.mlab.com/api/1/databases/pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
+# 3b) deploy visualizer to TEST
+# env vars for VISUALIZER
+  - name: dv-params
+    type: params
+    source:
+      params:
+        MONGO_API_URL: "https://api.mlab.com/api/1/databases/pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
 
 # ################################
 #
@@ -80,13 +81,13 @@ resources:
 #
 # ################################
 
-# # 3) deploy visualizer to TEST
-# # TEST env - TRITON CLUSTER
-#   - name: env-test-triton
-#     type: tripubCluster
-#     integration: ttrahan-tpc
-#     source:
-#       region: "us-east-1"
+# 3a) deploy visualizer to TEST
+# TEST env - TRITON CLUSTER
+  - name: env-test-triton
+    type: tripubCluster
+    integration: ttrahan-tpc
+    source:
+      region: "us-east-1"
 
 # ################################
 #
