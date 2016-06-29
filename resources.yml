@@ -4,7 +4,7 @@ resources:
 
 ################################
 
-# 1) add visualizer resources
+# 1) add visualizer resources to pipeline
 # VISUALIZER RESOURCES
 # REPO of VISUALIZER code
   - name: dv-repo
