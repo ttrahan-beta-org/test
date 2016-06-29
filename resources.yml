@@ -40,43 +40,43 @@ resources:
 
 ################################
 
-# # 4) add BOX resources to pipeline
-# # BOX RESOURCES
-# # REPO of BOX code
-#   - name: box-repo
-#     type: gitRepo
-#     integration: ttrahan-beta-gh
-#     source:
-#       name: ttrahan-beta/box
-#       branch: triton
-#
-# # Docker Image for BOX
-#   - name: box-img
-#     type: image
-#     integration: ttrahan-dh
-#     source:
-#       name: "ttrahan/box"
-#       isPull: false
-#       tag: "triton.1"
-#
-# # Docker Image Options for BOX
-#   - name: box-img-opts
-#     type: dockerOptions
-#     source:
-#       memory: 64
-#       cpu-shares: 512
-#
-# # TEST env vars for BOX
-#   - name: box-t-params
-#     type: params
-#     source:
-#       params:
-#         DB_HOST: "ds017544.mlab.com"
-#         DB_NAME: "box-pipev2"
-#         DB_PORT: "17544"
-#         DB_USERNAME: "demo"
-#         DB_PASSWORD: "demo"
-#         ENVIRONMENT: "test-triton"
+# 4) add BOX resources to pipeline
+# BOX RESOURCES
+# REPO of BOX code
+  - name: box-repo
+    type: gitRepo
+    integration: ttrahan-beta-gh
+    source:
+      name: ttrahan-beta/box
+      branch: triton
+
+# Docker Image for BOX
+  - name: box-img
+    type: image
+    integration: ttrahan-dh
+    source:
+      name: "ttrahan/box"
+      isPull: false
+      tag: "triton.1"
+
+# Docker Image Options for BOX
+  - name: box-img-opts
+    type: dockerOptions
+    source:
+      memory: 64
+      cpu-shares: 512
+
+# TEST env vars for BOX
+  - name: box-t-params
+    type: params
+    source:
+      params:
+        DB_HOST: "ds017544.mlab.com"
+        DB_NAME: "box-pipev2"
+        DB_PORT: "17544"
+        DB_USERNAME: "demo"
+        DB_PASSWORD: "demo"
+        ENVIRONMENT: "test-triton"
 
 ################################
 
