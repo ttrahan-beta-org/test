@@ -24,11 +24,11 @@ jobs:
 # VISUALIZER CODE test
 
 # CI for VISUALIZER
- - name: dv-ci
-   type: runCI
-   steps:
-     - GET: dv-repo-05
-     - PUT: dv-img
+  - name: dv-ci
+    type: runCI
+    steps:
+      - GET: dv-repo05
+      - PUT: dv-img
 
 # manifest gen for VISUALIZER
   - name: dv-man
