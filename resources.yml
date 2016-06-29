@@ -1,12 +1,14 @@
 resources:
-# TEST env - Triton cluster
+# TEST env - TRITON CLUSTER
   - name: env-test-triton
     type: tripubCluster
     integration: ttrahan-tpc
     source:
       region: "us-east-1"
 
-# VISUALIZER CODE
+################################
+
+# VISUALIZER RESOURCES
 # REPO of VISUALIZER code
   - name: dv-repo05
     type: gitRepo
@@ -38,42 +40,46 @@ resources:
       params:
         MONGO_API_URL: "https://api.mlab.com/api/1/databases/pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
 
-# # REPO of BOX code
-#   - name: box-repo
-#     type: gitRepo
-#     integration: ttrahan-gh
-#     source:
-#       name: ttrahan/box
-#       branch: triton
-#
-# # Docker Image for BOX
-#   - name: box-img
-#     type: image
-#     integration: ttrahan-dh
-#     source:
-#       name: "ttrahan/box"
-#       isPull: false
-#       tag: "triton.1"
-#
-# # TEST env vars for BOX
-#   - name: box-t-params
-#     type: params
-#     source:
-#       params:
-#         DB_HOST: "ds017544.mlab.com"
-#         DB_NAME: "box-pipev2"
-#         DB_PORT: "17544"
-#         DB_USERNAME: "demo"
-#         DB_PASSWORD: "demo"
-#         ENVIRONMENT: "test-triton"
+################################
+# BOX RESOURCES
+# REPO of BOX code
+  - name: box-repo
+    type: gitRepo
+    integration: ttrahan-gh
+    source:
+      name: ttrahan/box
+      branch: triton
 
-# # Docker Image Options for BOX
-#   - name: box-img-opts
-#     type: dockerOptions
-#     source:
-#       memory: 64
-#       cpu-shares: 512
-#
+# Docker Image for BOX
+  - name: box-img
+    type: image
+    integration: ttrahan-dh
+    source:
+      name: "ttrahan/box"
+      isPull: false
+      tag: "triton.1"
+
+# TEST env vars for BOX
+  - name: box-t-params
+    type: params
+    source:
+      params:
+        DB_HOST: "ds017544.mlab.com"
+        DB_NAME: "box-pipev2"
+        DB_PORT: "17544"
+        DB_USERNAME: "demo"
+        DB_PASSWORD: "demo"
+        ENVIRONMENT: "test-triton"
+
+# Docker Image Options for BOX
+  - name: box-img-opts
+    type: dockerOptions
+    source:
+      memory: 64
+      cpu-shares: 512
+
+################################
+
 # # PROD REPO for CONFIG
 #
 # # REPO for PROD configs
