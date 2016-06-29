@@ -28,7 +28,7 @@ jobs:
     type: tripubDeploy
     steps:
       - GET: dv-man
-      - GET: dv-params
+      #- GET: dv-params
       - GET: env-test-triton
 
 # ################################
