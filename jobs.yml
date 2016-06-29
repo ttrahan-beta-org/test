@@ -45,11 +45,11 @@ jobs:
     steps:
       - GET: box-img
       - GET: box-img-opts
-#
-# # TEST deployment for BOX
-#   - name: box-test-triton
-#     type: ecsDeploy
-#     steps:
-#       - GET: box-man
-#       - GET: box-t-params
-#       - GET: env-test-triton
+
+# TEST deployment for BOX
+  - name: box-test-triton
+    type: ecsDeploy
+    steps:
+      - GET: box-man
+      - GET: box-t-params
+      - GET: env-test-triton
