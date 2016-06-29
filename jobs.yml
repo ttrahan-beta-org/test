@@ -21,12 +21,6 @@ jobs:
 #       - GET: box-t-params
 #       - GET: env-test-triton
 
-
-
-
-
-
-
 # VISUALIZER CODE test
 
 # # CI for VISUALIZER
