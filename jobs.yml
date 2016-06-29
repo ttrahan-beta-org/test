@@ -38,15 +38,15 @@ jobs:
 
 # manifest gen for VISUALIZER
   - name: dv-man
-   type: manifest
-   steps:
-     - GET: dv-img
-     - GET: dv-img-opts
+    type: manifest
+    steps:
+      - GET: dv-img
+      - GET: dv-img-opts
 
 # TEST deployment for VISUALIZER
   - name: dv-test
-   type: tripubDeploy
-   steps:
-     - GET: dv-man
-     - GET: dv-params
-     - GET: env-test-triton
+    type: tripubDeploy
+    steps:
+      - GET: dv-man
+      - GET: dv-params
+      - GET: env-test-triton
