@@ -83,9 +83,9 @@ resources:
 
 # 3a) deploy visualizer to TEST
 # TEST env - TRITON CLUSTER
-  - name: env-test-triton-02
+  - name: env-test-triton
     type: tripubCluster
-    integration: ttrahan-tpc3
+    integration: ttrahan-tpc
     source:
       region: "us-east-1"
 
