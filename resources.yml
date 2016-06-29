@@ -8,9 +8,9 @@ resources:
 
 # VISUALIZER CODE
 # REPO of VISUALIZER code
-  - name: dv-repo02
+  - name: dv-repo03
     type: gitRepo
-    integration: ttrahan-dh
+    integration: ttrahan-beta-gh
     source:
       name: "ttrahan/dv"
       branch: triton
