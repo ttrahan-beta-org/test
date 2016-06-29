@@ -30,13 +30,13 @@ resources:
       memory: 128
       publishAllPorts : true
 
-# 3) deploy visualizer to TEST
-# env vars for VISUALIZER
-  - name: dv-params
-    type: params
-    source:
-      params:
-        MONGO_API_URL: "https://api.mlab.com/api/1/databases/pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
+# # 3) deploy visualizer to TEST
+# # env vars for VISUALIZER
+#   - name: dv-params
+#     type: params
+#     source:
+#       params:
+#         MONGO_API_URL: "https://api.mlab.com/api/1/databases/pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
 
 # ################################
 #
@@ -80,13 +80,13 @@ resources:
 #
 # ################################
 
-# 3) deploy visualizer to TEST
-# TEST env - TRITON CLUSTER
-  - name: env-test-triton
-    type: tripubCluster
-    integration: ttrahan-tpc2
-    source:
-      region: "us-east-1"
+# # 3) deploy visualizer to TEST
+# # TEST env - TRITON CLUSTER
+#   - name: env-test-triton
+#     type: tripubCluster
+#     integration: ttrahan-tpc
+#     source:
+#       region: "us-east-1"
 
 # ################################
 #
