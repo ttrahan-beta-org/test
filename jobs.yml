@@ -27,7 +27,7 @@ jobs:
  - name: dv-ci
    type: runCI
    steps:
-     - GET: dv-repo-04
+     - GET: dv-repo-05
      - PUT: dv-img
 
 # manifest gen for VISUALIZER
