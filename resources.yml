@@ -41,7 +41,7 @@ resources:
 
 # ################################
 
-# 4) add BOX resources to pipeline
+# 4a) add BOX resources to pipeline
 # BOX RESOURCES
 # REPO of BOX code
   - name: box-repo
@@ -58,7 +58,7 @@ resources:
     source:
       name: "ttrahan/box"
       isPull: false
-      tag: "triton.1"
+      tag: "triton.latest"
 
 # Docker Image Options for BOX
   - name: box-img-opts
@@ -91,7 +91,7 @@ resources:
 
 # ################################
 #
-# # 6) add deploy config for PROD
+# # 5) add deploy config for PROD
 # # REPO for PROD configs
 #   - name: prod-repo
 #     type: gitRepo
