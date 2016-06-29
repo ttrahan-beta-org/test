@@ -8,7 +8,7 @@ resources:
 
 # VISUALIZER CODE
 # REPO of VISUALIZER code
-  - name: dv-repo
+  - name: dv-repo02
     type: gitRepo
     integration: ttrahan-dh
     source:
