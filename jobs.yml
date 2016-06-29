@@ -21,14 +21,14 @@ jobs:
       - GET: dv-img
       - GET: dv-img-opts
 
-# # 3) deploy visualizer to TEST
-# # TEST deployment for VISUALIZER
-#   - name: dv-test
-#     type: tripubDeploy
-#     steps:
-#       - GET: dv-man
-#       - GET: dv-params
-#       - GET: env-test-triton
+# 3) deploy visualizer to TEST
+# TEST deployment for VISUALIZER
+  - name: dv-test
+    type: tripubDeploy
+    steps:
+      - GET: dv-man
+      - GET: dv-params
+      - GET: env-test-triton
 
 # ################################
 #
