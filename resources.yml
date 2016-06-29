@@ -30,14 +30,14 @@ resources:
       memory: 128
       publishAllPorts : true
 
-# 3) deploy visualizer to TEST
-# env vars for VISUALIZER
-  - name: dv-params
-    type: params
-    source:
-      params:
-        MONGO_API_URL: "https://api.mlab.com/api/1/databases/pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
-
+# # 3) deploy visualizer to TEST
+# # env vars for VISUALIZER
+#   - name: dv-params
+#     type: params
+#     source:
+#       params:
+#         MONGO_API_URL: "https://api.mlab.com/api/1/databases/pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
+#
 # ################################
 #
 # # 4) add BOX resources to pipeline

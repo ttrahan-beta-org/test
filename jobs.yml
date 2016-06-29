@@ -4,31 +4,31 @@ jobs:
 
 ################################
 
-# 2) add visualizer pipeline workflow for CI thru Hub
-# VISUALIZER JOBS - test environment
-
-# CI for VISUALIZER
-  - name: dv-ci
-    type: runCI
-    steps:
-      - GET: dv-repo
-      - PUT: dv-img
-
-# manifest gen for VISUALIZER
-  - name: dv-man
-    type: manifest
-    steps:
-      - GET: dv-img
-      - GET: dv-img-opts
-
-# 3) deploy visualizer to TEST
-# TEST deployment for VISUALIZER
-  - name: dv-test
-    type: tripubDeploy
-    steps:
-      - GET: dv-man
-      - GET: dv-params
-      - GET: env-test-triton
+# # 2) add visualizer pipeline workflow for CI thru Hub
+# # VISUALIZER JOBS - test environment
+#
+# # CI for VISUALIZER
+#   - name: dv-ci
+#     type: runCI
+#     steps:
+#       - GET: dv-repo
+#       - PUT: dv-img
+#
+# # manifest gen for VISUALIZER
+#   - name: dv-man
+#     type: manifest
+#     steps:
+#       - GET: dv-img
+#       - GET: dv-img-opts
+#
+# # 3) deploy visualizer to TEST
+# # TEST deployment for VISUALIZER
+#   - name: dv-test
+#     type: tripubDeploy
+#     steps:
+#       - GET: dv-man
+#       - GET: dv-params
+#       - GET: env-test-triton
 
 # ################################
 #
