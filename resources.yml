@@ -1,6 +1,6 @@
 resources:
 
-# resources for the box demo pipelines from CI thru Test environment
+# resources for the box demo pipelines from CI thru TEST environment
 
 ################################
 
@@ -86,12 +86,12 @@ resources:
 
 ################################
 
-# # PROD REPO for CONFIG
-#
-# # REPO for PROD configs
-#   - name: prod-repo01
-#     type: gitRepo
-#     integration: ttrahan-gh
-#     source:
-#       name: ttrahan/prod
-#       branch: triton
+# PROD REPO for CONFIG
+
+# REPO for PROD configs
+  - name: prod-repo
+    type: gitRepo
+    integration: ttrahan-beta-gh
+    source:
+      name: ttrahan-beta/prod
+      branch: triton
