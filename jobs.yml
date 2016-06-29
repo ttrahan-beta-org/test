@@ -37,14 +37,14 @@ jobs:
 #      - PUT: dv-img
 
 # manifest gen for VISUALIZER
- - name: dv-man
+  - name: dv-man
    type: manifest
    steps:
      - GET: dv-img
      - GET: dv-img-opts
 
 # TEST deployment for VISUALIZER
- - name: dv-test
+  - name: dv-test
    type: tripubDeploy
    steps:
      - GET: dv-man
