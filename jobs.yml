@@ -28,7 +28,7 @@ jobs:
     steps:
       - GET: dv-man
       - GET: dv-params
-      - GET: env-test-triton
+      - GET: env-test-triton-02
 
 # ################################
 #
