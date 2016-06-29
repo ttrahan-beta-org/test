@@ -35,7 +35,7 @@ jobs:
     type: manifest
     steps:
       - GET: dv-img
-      #- GET: dv-img-opts
+      - GET: dv-img-opts
 
 # TEST deployment for VISUALIZER
   - name: dv-test
