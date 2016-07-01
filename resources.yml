@@ -41,6 +41,16 @@ resources:
 
 # ################################
 
+# 3a) deploy visualizer to TEST
+# TEST env - TRITON CLUSTER
+  - name: env-test-triton
+    type: tripubCluster
+    integration: ttrahan-tpc
+    source:
+      region: "us-east-1"
+
+# ################################
+
 # 4a) add BOX resources to pipeline
 # BOX RESOURCES
 # REPO of BOX code
@@ -78,16 +88,6 @@ resources:
         DB_USERNAME: "demo"
         DB_PASSWORD: "demo"
         ENVIRONMENT: "test-triton"
-
-# ################################
-
-# 3a) deploy visualizer to TEST
-# TEST env - TRITON CLUSTER
-  - name: env-test-triton
-    type: tripubCluster
-    integration: ttrahan-tpc
-    source:
-      region: "us-east-1"
 
 # ################################
 #
