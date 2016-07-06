@@ -54,7 +54,7 @@ resources:
       region: "us-east-1"
 
 # PROD AWS cluster
-  - name: env-prod-aws
+  - name: env-test-aws
     type: ecsCluster
     integration: ttrahan-aws
     source:
