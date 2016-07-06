@@ -24,7 +24,7 @@ jobs:
 
 # 3c) deploy visualizer to TEST
 # TEST deployment for VISUALIZER to Joyent Triton
-  - name: dv-test
+  - name: dv-test-triton
     type: tripubDeploy
     steps:
       - GET: dv-man
@@ -32,12 +32,12 @@ jobs:
       - GET: env-test-triton
 
 # TEST deployment for VISUALIZER to Amazon ECS
-  - name: dv-test
+  - name: dv-test-ecs
     type: ecsDeploy
     steps:
       - GET: dv-man
       - GET: dv-params
-      - GET: env-test-aws
+      - GET: env-test-ecs
 
 # ################################
 
