@@ -56,7 +56,7 @@ resources:
 # PROD AWS cluster
   - name: env-prod-aws
     type: ecsCluster
-    integration: ttrahan-shippable-aws
+    integration: ttrahan-aws
     source:
       name : "demo-shippable-ecs-test"
       region: "us-east-1"
