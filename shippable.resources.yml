@@ -24,7 +24,7 @@ resources:
     source:
       name: ttrahan/dv
       isPull: false
-      tag: "triton.latest"
+      tag: "triton.26"
 
 # Docker Image Options for VISUALIZER
   - name: dv-img-opts
