@@ -5,6 +5,7 @@ resources:
 ################################
 
 # 1) add visualizer resources to pipeline for CI
+
 # VISUALIZER RESOURCES
 # REPO of VISUALIZER code
   - name: dv-repo
@@ -15,6 +16,7 @@ resources:
       branch: triton
 
 # 2) add visualizer pipeline thru hub
+
 # Docker Image for VISUALIZER
   - name: dv-img
     type: image
@@ -32,6 +34,7 @@ resources:
       publishAllPorts : true
 
 # 3b) deploy visualizer to TEST
+
 # env vars for VISUALIZER
   - name: dv-params
     type: params
@@ -42,6 +45,7 @@ resources:
 # ################################
 
 # 3a) deploy visualizer to TEST
+
 # TEST env - TRITON CLUSTER
   - name: env-test-triton
     type: tripubCluster
@@ -49,9 +53,18 @@ resources:
     source:
       region: "us-east-1"
 
+# PROD AWS cluster
+  - name: env-prod-aws
+    type: ecsCluster
+    integration: ttrahan-shippable-aws
+    source:
+      name : "demo-shippable-ecs-test"
+      region: "us-east-1"
+
 # ################################
 
 # 4a) add BOX resources to pipeline
+
 # BOX RESOURCES
 # REPO of BOX code
   - name: box-repo
