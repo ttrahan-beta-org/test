@@ -102,6 +102,18 @@ resources:
         DB_PASSWORD: "demo"
         ENVIRONMENT: "test-triton"
 
+# TEST env vars for BOX
+  - name: box-t-ecs-params
+    type: params
+    source:
+      params:
+        DB_HOST: "ds017544.mlab.com"
+        DB_NAME: "box-pipev2"
+        DB_PORT: "17544"
+        DB_USERNAME: "demo"
+        DB_PASSWORD: "demo"
+        ENVIRONMENT: "test-ecs"
+
 # ################################
 #
 # 5) add deploy config for PROD
