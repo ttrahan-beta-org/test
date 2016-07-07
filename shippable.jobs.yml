@@ -73,6 +73,6 @@ jobs:
     type: ecsDeploy
     steps:
       - GET: box-man
-      # - GET: box-t-ecs-params
+      - GET: box-t-ecs-params
       - GET: env-test-ecs
       # - GET: trigger-test-deploy-box
