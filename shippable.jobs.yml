@@ -69,7 +69,7 @@ jobs:
       - GET: trigger-test-deploy-box
 
 # TEST deployment for BOX to Amazon ECS
-  - name: box-test-ecs-2
+  - name: box-test-ecs
     type: ecsDeploy
     steps:
       - GET: box-man
