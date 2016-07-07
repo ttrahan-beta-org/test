@@ -70,7 +70,7 @@ jobs:
 
 # TEST deployment for BOX to Amazon ECS
   - name: box-test-ecs
-    type: tripubDeploy
+    type: ecsDeploy
     steps:
       - GET: box-man
       - GET: box-t-params

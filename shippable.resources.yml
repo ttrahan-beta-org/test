@@ -33,7 +33,7 @@ resources:
       memory: 128
       publishAllPorts : true
 
-# 3b) deploy visualizer to TEST
+# 3b) deploy VISUALIZER to TEST
 
 # env vars for VISUALIZER
   - name: dv-params
@@ -44,7 +44,7 @@ resources:
 
 # ################################
 
-# 3a) deploy visualizer to TEST
+# 3a) deploy VISUALIZER to TEST
 
 # TEST env - TRITON CLUSTER
   - name: env-test-triton
