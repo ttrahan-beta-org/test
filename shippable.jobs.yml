@@ -30,6 +30,7 @@ jobs:
       - GET: dv-man
       - GET: dv-params
       - GET: env-test-triton
+      - GET: trigger-test-deploy-dv
 
 # TEST deployment for VISUALIZER to Amazon ECS
   - name: dv-test-ecs
@@ -38,6 +39,7 @@ jobs:
       - GET: dv-man
       - GET: dv-params
       - GET: env-test-ecs
+      - GET: trigger-test-deploy-dv
 
 # ################################
 
@@ -57,10 +59,20 @@ jobs:
       - GET: box-img
       - GET: box-img-opts
 
-# TEST deployment for BOX
+# TEST deployment for BOX to Joyent Triton
   - name: box-test-triton
     type: tripubDeploy
     steps:
       - GET: box-man
       - GET: box-t-params
       - GET: env-test-triton
+      - GET: trigger-test-deploy-box
+
+# TEST deployment for BOX to Amazon ECS
+  - name: box-test-ecs
+    type: tripubDeploy
+    steps:
+      - GET: box-man
+      - GET: box-t-params
+      - GET: env-test-ecs
+      - GET: trigger-test-deploy-box
