@@ -46,14 +46,14 @@ resources:
 
 # 3a) deploy VISUALIZER to TEST
 
-# TEST env - TRITON CLUSTER
-  - name: env-test-triton
-    type: tripubCluster
-    integration: ttrahan-tpc
-    source:
-      region: "us-east-1"
+# # TEST env - TRITON CLUSTER
+#   - name: env-test-triton
+#     type: tripubCluster
+#     integration: ttrahan-tpc
+#     source:
+#       region: "us-east-1"
 
-# PROD AWS cluster
+# TEST env - AWS cluster
   - name: env-test-ecs
     type: ecsCluster
     integration: ttrahan-aws
@@ -100,19 +100,20 @@ resources:
         DB_PORT: "17544"
         DB_USERNAME: "demo"
         DB_PASSWORD: "demo"
-        ENVIRONMENT: "test-triton"
 
 # TEST env vars for BOX
   - name: box-t-ecs-params
     type: params
     source:
       params:
-        DB_HOST: "ds017544.mlab.com"
-        DB_NAME: "box-pipev2"
-        DB_PORT: "17544"
-        DB_USERNAME: "demo"
-        DB_PASSWORD: "demo"
         ENVIRONMENT: "test-ecs"
+
+# # TEST env vars for BOX
+#   - name: box-t-tpc-params
+#     type: params
+#     source:
+#       params:
+#         ENVIRONMENT: "test-triton"
 
 # ################################
 #
