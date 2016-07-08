@@ -21,7 +21,6 @@ jobs:
     steps:
       - GET: dv-img
       - GET: dv-img-opts
-      - GET: trigger-test-deploy-dv
 
 # 3c) deploy visualizer to TEST
 
