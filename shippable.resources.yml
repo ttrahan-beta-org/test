@@ -31,6 +31,8 @@ resources:
     type: dockerOptions
     source:
       memory: 128
+      portMappings:
+        - 80:80
       publishAllPorts : true
 
 # 3b) deploy VISUALIZER to TEST
