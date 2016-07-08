@@ -64,8 +64,8 @@ jobs:
     type: tripubDeploy
     steps:
       - GET: box-man
-      - GET: box-t-params
       - GET: env-test-triton
+      - GET: box-t-params
       - GET: trigger-test-deploy-box
 
 # TEST deployment for BOX to Amazon ECS
