@@ -7,23 +7,33 @@ jobs:
 # 1) add visualizer pipeline workflow for CI
 # VISUALIZER JOBS - test environment
 
-# CI for VISUALIZER
-  - name: dv-ci
-    type: runCI
-    steps:
-      - GET: dv-repo
-      - PUT: dv-img
+# # CI for VISUALIZER
+#   - name: dv-ci
+#     type: runCI
+#     steps:
+#       - GET: dv-repo
+#       - PUT: dv-img
 
 # 2) add visualizer pipeline workflow thru hub
-# manifest gen for VISUALIZER
-  - name: dv-man
-    type: manifest
-    steps:
-      - GET: dv-img
-      - GET: dv-img-opts
-      - GET: trigger-test-deploy-dv
+
+# # manifest gen for VISUALIZER
+#   - name: dv-man
+#     type: manifest
+#     steps:
+#       - GET: dv-img
+#       - GET: dv-img-opts
+#       - GET: trigger-test-deploy-dv
 
 # 3c) deploy visualizer to TEST
+
+# # TEST deployment for VISUALIZER to Amazon ECS
+#   - name: dv-test-ecs
+#     type: ecsDeploy
+#     steps:
+#       - GET: dv-man
+#       - GET: dv-params
+#       - GET: env-test-ecs
+#       - GET: trigger-test-deploy-dv
 
 # # TEST deployment for VISUALIZER to Joyent Triton
 #   - name: dv-test-triton
@@ -34,32 +44,33 @@ jobs:
 #       - GET: env-test-triton
 #       - GET: trigger-test-deploy-dv
 
-# TEST deployment for VISUALIZER to Amazon ECS
-  - name: dv-test-ecs
-    type: ecsDeploy
-    steps:
-      - GET: dv-man
-      - GET: dv-params
-      - GET: env-test-ecs
-      - GET: trigger-test-deploy-dv
-
 # ################################
 
 # BOX JOBS - test environment
 # 4b) add BOX pipeline workflow for CI thru TEST
-# CI for BOX
-  - name: box-ci
-    type: runCI
-    steps:
-      - GET: box-repo
-      - PUT: box-img
-
-# manifest gen for BOX
-  - name: box-man
-    type: manifest
-    steps:
-      - GET: box-img
-      - GET: box-img-opts
+# # CI for BOX
+#   - name: box-ci
+#     type: runCI
+#     steps:
+#       - GET: box-repo
+#       - PUT: box-img
+#
+# # manifest gen for BOX
+#   - name: box-man
+#     type: manifest
+#     steps:
+#       - GET: box-img
+#       - GET: box-img-opts
+#
+# # TEST deployment for BOX to Amazon ECS
+#   - name: box-test-aws-ecs
+#     type: ecsDeploy
+#     steps:
+#       - GET: box-man
+#       - GET: env-test-ecs
+#       - GET: box-t-params
+#       - GET: box-t-ecs-params
+#       - GET: trigger-test-deploy-box
 
 # # TEST deployment for BOX to Joyent Triton
 #   - name: box-test-triton
@@ -70,13 +81,3 @@ jobs:
 #       - GET: box-t-params
 #       - GET: box-t-tpc-params
 #       - GET: trigger-test-deploy-box
-
-# TEST deployment for BOX to Amazon ECS
-  - name: box-test-aws-ecs
-    type: ecsDeploy
-    steps:
-      - GET: box-man
-      - GET: env-test-ecs
-      - GET: box-t-params
-      - GET: box-t-ecs-params
-      - GET: trigger-test-deploy-box
