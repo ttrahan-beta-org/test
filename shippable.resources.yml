@@ -6,7 +6,7 @@ resources:
 
 # 1) add visualizer resources to pipeline for CI
 
-VISUALIZER RESOURCES
+# VISUALIZER RESOURCES
 # REPO of VISUALIZER code
   - name: dv-repo
     type: gitRepo
