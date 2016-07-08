@@ -21,6 +21,7 @@ jobs:
     steps:
       - GET: dv-img
       - GET: dv-img-opts
+      - GET: trigger-test-deploy-dv
 
 # 3c) deploy visualizer to TEST
 
@@ -75,7 +76,7 @@ jobs:
     type: ecsDeploy
     steps:
       - GET: box-man
+      - GET: env-test-ecs
       - GET: box-t-params
       - GET: box-t-ecs-params
-      - GET: env-test-ecs
       - GET: trigger-test-deploy-box
