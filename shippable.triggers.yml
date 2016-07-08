@@ -1,9 +1,9 @@
 triggers:
-  # - name: trigger-test-deploy-dv
-  #   type: trigger
-  #   source:
-  #     message: 'testing trigger in test 3'
-  #
+  - name: trigger-test-deploy-dv
+    type: trigger
+    source:
+      message: 'testing trigger in test 3'
+
   # - name: trigger-test-deploy-box
   #   type: trigger
   #   source:
