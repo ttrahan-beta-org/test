@@ -2,9 +2,9 @@ triggers:
   - name: trigger-test-deploy-dv
     type: trigger
     source:
-      message: 'testing trigger in test'
+      message: 'testing trigger in test 2'
 
   - name: trigger-test-deploy-box
     type: trigger
     source:
-      counter: 1
+      counter: 2
