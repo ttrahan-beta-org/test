@@ -47,12 +47,12 @@ resources:
       name : "demo-shippable-ecs-test"
       region: "us-east-1"
 
-# # TEST env - TRITON CLUSTER
-#   - name: env-test-triton
-#     type: tripubCluster
-#     integration: ttrahan-tpc
-#     source:
-#       region: "us-east-1"
+# TEST env - TRITON CLUSTER
+  - name: env-test-triton
+    type: tripubCluster
+    integration: ttrahan-tpc
+    source:
+      region: "us-east-1"
 
 # 3b) deploy VISUALIZER to TEST
 
@@ -110,15 +110,15 @@ resources:
       params:
         ENVIRONMENT: "test-ecs"
 
-# # TEST env vars for BOX for Joyent Triton
-#   - name: box-t-tpc-params
-#     type: params
-#     source:
-#       params:
-#         ENVIRONMENT: "test-triton"
+# TEST env vars for BOX for Joyent Triton
+  - name: box-t-tpc-params
+    type: params
+    source:
+      params:
+        ENVIRONMENT: "test-triton"
 
 # ################################
-#
+
 # 5) add deploy config for PROD
 # REPO for PROD configs
   - name: prod-repo
