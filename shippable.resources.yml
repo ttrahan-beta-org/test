@@ -121,7 +121,7 @@ resources:
 
 # 5) add deploy config for PROD
 # REPO for PROD configs
-  - name: prod-repo
+  - name: prod-deploy
     type: syncRepo
     integration: ttrahan-beta-gh
     source:
