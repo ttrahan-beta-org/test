@@ -4,9 +4,8 @@ resources:
 
 ################################
 
-# 1) add visualizer resources to pipeline for CI
+# add visualizer resources to pipeline for CI
 
-# VISUALIZER RESOURCES
 # REPO of VISUALIZER code
   - name: dv-repo
     type: gitRepo
@@ -15,7 +14,7 @@ resources:
       name: ttrahan-beta/dv
       branch: triton
 
-# 2) add visualizer pipeline thru hub
+# add visualizer pipeline thru hub
 
 # Docker Image for VISUALIZER
   - name: dv-img
@@ -35,26 +34,7 @@ resources:
         - 80:80
       publishAllPorts : true
 
-# ################################
-
-# 3a) deploy VISUALIZER to TEST
-
-# TEST env - AWS cluster
-  - name: env-test-ecs
-    type: ecsCluster
-    integration: ttrahan-aws
-    source:
-      name : "demo-shippable-ecs-test"
-      region: "us-east-1"
-
-# TEST env - TRITON CLUSTER
-  - name: env-test-triton
-    type: tripubCluster
-    integration: ttrahan-tpc
-    source:
-      region: "us-east-1"
-
-# 3b) deploy VISUALIZER to TEST
+# add visualizer resources for deployment to TEST
 
 # env vars for VISUALIZER
   - name: dv-params
@@ -63,11 +43,25 @@ resources:
       params:
         MONGO_API_URL: "https://api.mlab.com/api/1/databases/box-pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
 
+# # add TEST env - AWS cluster
+#   - name: env-test-ecs
+#     type: ecsCluster
+#     integration: ttrahan-aws
+#     source:
+#       name : "demo-shippable-ecs-test"
+#       region: "us-east-1"
+
+# add TEST env - TRITON CLUSTER
+  - name: env-test-triton
+    type: tripubCluster
+    integration: ttrahan-tpc
+    source:
+      region: "us-east-1"
+
 # ################################
 
-# 4a) add BOX resources to pipeline for Amazon ECS
+# add BOX resources to pipeline
 
-# BOX RESOURCES
 # REPO of BOX code
   - name: box-repo
     type: gitRepo
@@ -92,6 +86,8 @@ resources:
       memory: 64
       cpu-shares: 512
 
+# add visualizer resources for deployment to TEST
+
 # TEST env vars for BOX
   - name: box-t-params
     type: params
@@ -103,12 +99,12 @@ resources:
         DB_USERNAME: "demo"
         DB_PASSWORD: "demo"
 
-# TEST env vars for BOX for Amazon ECS
-  - name: box-t-ecs-params
-    type: params
-    source:
-      params:
-        ENVIRONMENT: "test-ecs"
+# # TEST env vars for BOX for Amazon ECS
+#   - name: box-t-ecs-params
+#     type: params
+#     source:
+#       params:
+#         ENVIRONMENT: "test-ecs"
 
 # TEST env vars for BOX for Joyent Triton
   - name: box-t-tpc-params
@@ -119,7 +115,7 @@ resources:
 
 # ################################
 
-# 5) add deploy config for PROD
+# add deploy config for PROD environment
 # REPO for PROD configs
   - name: prod-deploy
     type: syncRepo
