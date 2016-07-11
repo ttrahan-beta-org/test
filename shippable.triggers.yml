@@ -7,4 +7,4 @@ triggers:
   - name: trigger-test-deploy-box
     type: trigger
     source:
-      counter: 2
+      counter: 3
