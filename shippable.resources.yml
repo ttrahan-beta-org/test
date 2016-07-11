@@ -43,13 +43,13 @@ resources:
       params:
         MONGO_API_URL: "https://api.mlab.com/api/1/databases/box-pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
 
-# # add TEST env - AWS cluster
-#   - name: env-test-ecs
-#     type: ecsCluster
-#     integration: ttrahan-aws
-#     source:
-#       name : "demo-shippable-ecs-test"
-#       region: "us-east-1"
+# add TEST env - AWS cluster
+  - name: env-test-ecs
+    type: ecsCluster
+    integration: ttrahan-aws
+    source:
+      name : "demo-shippable-ecs-test"
+      region: "us-east-1"
 
 # add TEST env - TRITON CLUSTER
   - name: env-test-triton
@@ -99,12 +99,12 @@ resources:
         DB_USERNAME: "demo"
         DB_PASSWORD: "demo"
 
-# # TEST env vars for BOX for Amazon ECS
-#   - name: box-t-ecs-params
-#     type: params
-#     source:
-#       params:
-#         ENVIRONMENT: "test-ecs"
+# TEST env vars for BOX for Amazon ECS
+  - name: box-t-ecs-params
+    type: params
+    source:
+      params:
+        ENVIRONMENT: "test-ecs"
 
 # TEST env vars for BOX for Joyent Triton
   - name: box-t-tpc-params
