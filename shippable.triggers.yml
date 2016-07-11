@@ -2,7 +2,7 @@ triggers:
   - name: trigger-test-deploy-dv
     type: trigger
     source:
-      message: 'testing trigger in test 3'
+      message: 'testing trigger in test'
 
   - name: trigger-test-deploy-box
     type: trigger
