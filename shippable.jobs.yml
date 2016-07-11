@@ -35,15 +35,15 @@ jobs:
       - GET: env-test-ecs
       - GET: trigger-test-deploy-dv
 
-# TEST deployment for VISUALIZER to Joyent Triton
-  - name: dv-test-triton
-    type: tripubDeploy
-    steps:
-      - GET: dv-man
-      - GET: dv-params
-      - GET: box-t-tpc-params
-      - GET: env-test-triton
-      - GET: trigger-test-deploy-dv
+# # TEST deployment for VISUALIZER to Joyent Triton
+#   - name: dv-test-triton
+#     type: tripubDeploy
+#     steps:
+#       - GET: dv-man
+#       - GET: dv-params
+#       - GET: box-t-tpc-params
+#       - GET: env-test-triton
+#       - GET: trigger-test-deploy-dv
 
 # ################################
 
