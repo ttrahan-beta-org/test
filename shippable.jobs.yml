@@ -41,6 +41,7 @@ jobs:
     steps:
       - GET: dv-man
       - GET: dv-params
+      - GET: box-t-tpc-params
       - GET: env-test-triton
       - GET: trigger-test-deploy-dv
 
