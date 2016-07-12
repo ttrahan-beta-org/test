@@ -4,6 +4,25 @@ resources:
 
 ################################
 
+# add TEST environment
+
+# add TEST env - AWS cluster
+  - name: env-test-ecs
+    type: ecsCluster
+    integration: ttrahan-aws
+    source:
+      name : "demo-shippable-ecs-test"
+      region: "us-east-1"
+
+# # add TEST env - TRITON CLUSTER
+#   - name: env-test-triton
+#     type: tripubCluster
+#     integration: ttrahan-tpc
+#     source:
+#       region: "us-east-1"
+
+################################
+
 # add visualizer resources to pipeline for CI
 
 # REPO of VISUALIZER code
@@ -13,8 +32,6 @@ resources:
     source:
       name: ttrahan-beta/dv
       branch: triton
-
-# add visualizer pipeline thru hub
 
 # Docker Image for VISUALIZER
   - name: dv-img
@@ -34,29 +51,12 @@ resources:
         - 80:80
       publishAllPorts : true
 
-# add visualizer resources for deployment to TEST
-
 # env vars for VISUALIZER
   - name: dv-params
     type: params
     source:
       params:
         MONGO_API_URL: "https://api.mlab.com/api/1/databases/box-pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
-
-# add TEST env - AWS cluster
-  - name: env-test-ecs
-    type: ecsCluster
-    integration: ttrahan-aws
-    source:
-      name : "demo-shippable-ecs-test"
-      region: "us-east-1"
-
-# add TEST env - TRITON CLUSTER
-  - name: env-test-triton
-    type: tripubCluster
-    integration: ttrahan-tpc
-    source:
-      region: "us-east-1"
 
 # ################################
 
@@ -86,8 +86,6 @@ resources:
       memory: 64
       cpu-shares: 512
 
-# add visualizer resources for deployment to TEST
-
 # TEST env vars for BOX
   - name: box-t-params
     type: params
@@ -106,12 +104,12 @@ resources:
       params:
         ENVIRONMENT: "test-ecs"
 
-# TEST env vars for BOX for Joyent Triton
-  - name: box-t-tpc-params
-    type: params
-    source:
-      params:
-        ENVIRONMENT: "test-triton"
+# # TEST env vars for BOX for Joyent Triton
+#   - name: box-t-tpc-params
+#     type: params
+#     source:
+#       params:
+#         ENVIRONMENT: "test-triton"
 
 # ################################
 
