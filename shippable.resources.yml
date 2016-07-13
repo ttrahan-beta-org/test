@@ -121,9 +121,3 @@ resources:
     source:
       name: ttrahan-beta/prod
       branch: triton
-
-# CI for VISUALIZER
-  - name: prod-yml-sync
-    type: rSync
-    steps:
-      - GET: prod-deploy
