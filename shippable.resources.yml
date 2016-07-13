@@ -113,11 +113,11 @@ resources:
 
 # ################################
 
-# add deploy config for PROD environment
-# REPO for PROD configs
-  - name: prod-deploy
-    type: syncRepo
-    integration: ttrahan-beta-gh
-    source:
-      name: ttrahan-beta/prod
-      branch: triton
+# # add deploy config for PROD environment
+# # REPO for PROD configs
+#   - name: prod-deploy
+#     type: syncRepo
+#     integration: ttrahan-beta-gh
+#     source:
+#       name: ttrahan-beta/prod
+#       branch: triton
