@@ -12,7 +12,6 @@ resources:
     integration: ttrahan-aws
     pointer:
       sourceName : "demo-shippable-ecs-test"
-    version:
       region: "us-east-1"
 
 # # add TEST env - TRITON CLUSTER
