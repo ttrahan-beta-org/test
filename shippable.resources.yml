@@ -12,6 +12,7 @@ resources:
     integration: ttrahan-aws
     pointer:
       sourceName : "demo-shippable-ecs-test"
+    version:
       region: "us-east-1"
 
 # # add TEST env - TRITON CLUSTER
@@ -40,7 +41,7 @@ resources:
     pointer:
       sourceName: ttrahan/dv
       isPull: false
-    initialVersion:
+    seed:
       versionName: latest
 
 # Docker Image Options for VISUALIZER

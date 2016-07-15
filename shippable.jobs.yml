@@ -4,11 +4,11 @@ jobs:
 
 ################################
 
-# CI for VISUALIZER
-  - name: prod-yml-sync
-    type: rSync
-    steps:
-      - GET: prod-deploy
+# # CI for VISUALIZER
+#   - name: prod-yml-sync
+#     type: rSync
+#     steps:
+#       - GET: prod-deploy
 
 # add visualizer pipeline workflow for CI
 # VISUALIZER JOBS - test environment
