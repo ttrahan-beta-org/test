@@ -10,8 +10,8 @@ resources:
   - name: env-test-ecs
     type: ecsCluster
     integration: ttrahan-aws
-    source:
-      name : "demo-shippable-ecs-test"
+    pointer:
+      sourceName : "demo-shippable-ecs-test"
       region: "us-east-1"
 
 # # add TEST env - TRITON CLUSTER
@@ -29,24 +29,26 @@ resources:
   - name: dv-repo
     type: gitRepo
     integration: ttrahan-beta-gh
-    source:
-      name: ttrahan-beta/dv
+    pointer:
+      sourceName: ttrahan-beta/dv
       branch: triton
 
 # Docker Image for VISUALIZER
   - name: dv-img
     type: image
     integration: ttrahan-dh
-    source:
-      name: ttrahan/dv
+    pointer:
+      sourceName: ttrahan/dv
       isPull: false
-      tag: "triton.26"
+    initialVersion:
+      versionName: latest
 
 # Docker Image Options for VISUALIZER
   - name: dv-img-opts
     type: dockerOptions
     source:
       memory: 128
+      cpuShares: 256
       portMappings:
         - 80:80
       publishAllPorts : true
