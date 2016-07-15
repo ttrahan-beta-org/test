@@ -79,12 +79,12 @@ jobs:
       - GET: box-t-ecs-params
       - GET: trigger-test-deploy-box
 
-# # TEST deployment for BOX to Joyent Triton
-#   - name: box-test-triton
-#     type: tripubDeploy
-#     steps:
-#       - GET: box-man
-#       - GET: env-test-triton
-#       - GET: box-t-params
-#       - GET: box-t-tpc-params
-#       - GET: trigger-test-deploy-box
+# TEST deployment for BOX to Joyent Triton
+  - name: box-test-triton
+    type: tripubDeploy
+    steps:
+      - GET: box-man
+      - GET: env-test-triton
+      - GET: box-t-params
+      - GET: box-t-tpc-params
+      - GET: trigger-test-deploy-box
