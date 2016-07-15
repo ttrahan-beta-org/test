@@ -47,7 +47,7 @@ resources:
 # Docker Image Options for VISUALIZER
   - name: dv-img-opts
     type: dockerOptions
-    source:
+    version:
       memory: 128
       cpuShares: 256
       portMappings:
@@ -57,7 +57,7 @@ resources:
 # env vars for VISUALIZER
   - name: dv-params
     type: params
-    source:
+    version:
       params:
         MONGO_API_URL: "https://api.mlab.com/api/1/databases/box-pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
 
@@ -85,14 +85,14 @@ resources:
 # Docker Image Options for BOX
   - name: box-img-opts
     type: dockerOptions
-    source:
+    version:
       memory: 64
       cpu-shares: 512
 
 # TEST env vars for BOX
   - name: box-t-params
     type: params
-    source:
+    version:
       params:
         DB_HOST: "ds017544.mlab.com"
         DB_NAME: "box-pipev2"
@@ -103,14 +103,14 @@ resources:
 # TEST env vars for BOX for Amazon ECS
   - name: box-t-ecs-params
     type: params
-    source:
+    version:
       params:
         ENVIRONMENT: "test-ecs"
 
 # # TEST env vars for BOX for Joyent Triton
 #   - name: box-t-tpc-params
 #     type: params
-#     source:
+#     version:
 #       params:
 #         ENVIRONMENT: "test-triton"
 
