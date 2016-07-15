@@ -79,7 +79,8 @@ resources:
     pointer:
       name: "ttrahan/box"
       isPull: false
-      tag: "triton.latest"
+    seed:
+      versionName: "triton.latest"
 
 # Docker Image Options for BOX
   - name: box-img-opts
