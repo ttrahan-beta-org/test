@@ -41,7 +41,7 @@ resources:
       sourceName: ttrahan/dv
       isPull: false
     seed:
-      versionName: latest
+      versionName: triton.latest
 
 # Docker Image Options for VISUALIZER
   - name: dv-img-opts
@@ -80,7 +80,7 @@ resources:
       sourceName: "ttrahan/box"
       isPull: false
     seed:
-      versionName: "triton.latest"
+      versionName: triton.latest
 
 # Docker Image Options for BOX
   - name: box-img-opts
@@ -122,5 +122,5 @@ resources:
 #     type: syncRepo
 #     integration: ttrahan-beta-gh
 #     source:
-#       name: ttrahan-beta/prod
+#       sourceName: ttrahan-beta/prod
 #       branch: triton
