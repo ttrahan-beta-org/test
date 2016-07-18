@@ -92,6 +92,7 @@ jobs:
     type: runSh
     steps:
       - IN: custom-script-repo
+      - IN: box-test-aws-ecs
       - TASK:
         - script: ./custom_script.sh
 
