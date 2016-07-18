@@ -8,7 +8,7 @@ jobs:
 #   - name: prod-yml-sync
 #     type: rSync
 #     steps:
-#       - GET: prod-deploy
+#       - IN: prod-deploy
 
 # add visualizer pipeline workflow for CI
 # VISUALIZER JOBS - test environment
@@ -17,8 +17,9 @@ jobs:
   - name: dv-ci
     type: runCI
     steps:
-      - GET: dv-repo
-      - PUT: dv-img
+      - IN: dv-repo
+      - TASK: managed
+      - OUT: dv-img
 
 # add visualizer pipeline workflow thru hub
 
@@ -26,9 +27,10 @@ jobs:
   - name: dv-man
     type: manifest
     steps:
-      - GET: dv-img
-      - GET: dv-img-opts
-      - GET: trigger-test-deploy-dv
+      - IN: dv-img
+      - IN: dv-img-opts
+      - IN: trigger-test-deploy-dv
+      - TASK: managed
 
 # deploy visualizer to TEST
 
@@ -36,20 +38,22 @@ jobs:
   - name: dv-test-ecs
     type: ecsDeploy
     steps:
-      - GET: dv-man
-      - GET: dv-params
-      - GET: env-test-ecs
-      - GET: trigger-test-deploy-dv
+      - IN: dv-man
+      - IN: dv-params
+      - IN: env-test-ecs
+      - IN: trigger-test-deploy-dv
+      - TASK: managed
 
 # # TEST deployment for VISUALIZER to Joyent Triton
 #   - name: dv-test-triton
 #     type: tripubDeploy
 #     steps:
-#       - GET: dv-man
-#       - GET: dv-params
-#       - GET: box-t-tpc-params
-#       - GET: env-test-triton
-#       - GET: trigger-test-deploy-dv
+#       - IN: dv-man
+#       - IN: dv-params
+#       - IN: box-t-tpc-params
+#       - IN: env-test-triton
+#       - IN: trigger-test-deploy-dv
+#       - TASK: managed
 
 # ################################
 
@@ -59,32 +63,45 @@ jobs:
   - name: box-ci
     type: runCI
     steps:
-      - GET: box-repo
-      - PUT: box-img
+      - IN: box-repo
+      - TASK: managed
+      - OUT: box-img
 
 # manifest gen for BOX
   - name: box-man
     type: manifest
     steps:
-      - GET: box-img
-      - GET: box-img-opts
+      - IN: box-img
+      - IN: box-img-opts
+      - TASK: managed
+        deployMethod: upgrade
 
 # TEST deployment for BOX to Amazon ECS
   - name: box-test-aws-ecs
     type: ecsDeploy
     steps:
-      - GET: box-man
-      - GET: env-test-ecs
-      - GET: box-t-params
-      - GET: box-t-ecs-params
-      - GET: trigger-test-deploy-box
+      - IN: box-man
+      - IN: env-test-ecs
+      - IN: box-t-params
+      - IN: box-t-ecs-params
+      - IN: trigger-test-deploy-box
+      - TASK: managed
+
+# execute custom script
+  - name: execute-sample-script
+    type: runSh
+    steps:
+      - IN: custom-script-repo
+      - TASK:
+        - script: ./custom_script.sh
 
 # # TEST deployment for BOX to Joyent Triton
 #   - name: box-test-triton
 #     type: tripubDeploy
 #     steps:
-#       - GET: box-man
-#       - GET: env-test-triton
-#       - GET: box-t-params
-#       - GET: box-t-tpc-params
-#       - GET: trigger-test-deploy-box
+#       - IN: box-man
+#       - IN: env-test-triton
+#       - IN: box-t-params
+#       - IN: box-t-tpc-params
+#       - IN: trigger-test-deploy-box
+#       - TASK: managed

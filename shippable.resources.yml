@@ -8,7 +8,7 @@ resources:
 
 # add TEST env - AWS cluster
   - name: env-test-ecs
-    type: ecsCluster
+    type: cluster
     integration: ttrahan-aws
     pointer:
       sourceName : "demo-shippable-ecs-test"
@@ -16,7 +16,7 @@ resources:
 
 # # add TEST env - TRITON CLUSTER
 #   - name: env-test-triton
-#     type: tripubCluster
+#     type: cluster
 #     integration: ttrahan-tpc
 #     version:
 #       region: "us-east-1"
@@ -124,3 +124,13 @@ resources:
 #     source:
 #       sourceName: ttrahan-beta/prod
 #       branch: triton
+
+# ################################
+
+# execute custom script action
+  - name: custom-script-repo
+    type: gitRepo
+    integration: ttrahan-beta-gh
+    pointer:
+      sourceName: ttrahan/sample-script
+      branch: master
