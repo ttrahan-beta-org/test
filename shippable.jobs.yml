@@ -81,7 +81,7 @@ jobs:
     type: ecsDeploy
     steps:
       - IN: box-man
-      - IN: env-test-ecs
+      - IN: env-test-ecs-02
       - IN: box-t-params
       - IN: box-t-ecs-params
       - IN: trigger-test-deploy-box
