@@ -7,7 +7,7 @@ resources:
 # add TEST environment
 
 # add TEST env - AWS cluster
-  - name: env-test-ecs
+  - name: env-test-ecs-02
     type: cluster
     integration: ttrahan-aws
     pointer:
@@ -132,5 +132,5 @@ resources:
     type: gitRepo
     integration: ttrahan-beta-gh
     pointer:
-      sourceName: ttrahan/sample-script
+      sourceName: ttrahan-beta/sample-script
       branch: master
