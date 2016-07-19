@@ -8,3 +8,8 @@ triggers:
     type: trigger
     version:
       counter: 4
+
+  - name: trigger-post-deploy-script
+    type: trigger
+    version:
+      counter: 1

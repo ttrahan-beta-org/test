@@ -34,26 +34,26 @@ jobs:
 
 # deploy visualizer to TEST
 
-# TEST deployment for VISUALIZER to Amazon ECS
-  - name: dv-test-ecs
-    type: ecsDeploy
-    steps:
-      - IN: dv-man
-      - IN: dv-params
-      - IN: env-test-ecs
-      - IN: trigger-test-deploy-dv
-      - TASK: managed
-
-# # TEST deployment for VISUALIZER to Joyent Triton
-#   - name: dv-test-triton
-#     type: tripubDeploy
+# # TEST deployment for VISUALIZER to Amazon ECS
+#   - name: dv-test-ecs
+#     type: ecsDeploy
 #     steps:
 #       - IN: dv-man
 #       - IN: dv-params
-#       - IN: box-t-tpc-params
-#       - IN: env-test-triton
+#       - IN: env-test-ecs
 #       - IN: trigger-test-deploy-dv
 #       - TASK: managed
+
+# TEST deployment for VISUALIZER to Joyent Triton
+  - name: dv-test-triton
+    type: tripubDeploy
+    steps:
+      - IN: dv-man
+      - IN: dv-params
+      - IN: box-t-tpc-params
+      - IN: env-test-triton
+      - IN: trigger-test-deploy-dv
+      - TASK: managed
 
 # ################################
 
@@ -76,33 +76,34 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
 
-# TEST deployment for BOX to Amazon ECS
-  - name: box-test-aws-ecs
-    type: ecsDeploy
-    steps:
-      - IN: box-man
-      - IN: env-test-ecs-02
-      - IN: box-t-params
-      - IN: box-t-ecs-params
-      - IN: trigger-test-deploy-box
-      - TASK: managed
-
-# execute custom script
-  - name: execute-sample-script
-    type: runSh
-    steps:
-      - IN: custom-script-repo
-      - IN: box-test-aws-ecs
-      - TASK:
-        - script: ./custom_script.sh
-
-# # TEST deployment for BOX to Joyent Triton
-#   - name: box-test-triton
-#     type: tripubDeploy
+# # TEST deployment for BOX to Amazon ECS
+#   - name: box-test-aws-ecs
+#     type: ecsDeploy
 #     steps:
 #       - IN: box-man
-#       - IN: env-test-triton
+#       - IN: env-test-ecs-02
 #       - IN: box-t-params
-#       - IN: box-t-tpc-params
+#       - IN: box-t-ecs-params
 #       - IN: trigger-test-deploy-box
 #       - TASK: managed
+#       - OUT: trigger-post-deploy-script
+
+# # execute custom script
+#   - name: execute-sample-script
+#     type: runSh
+#     steps:
+#       - IN: custom-script-repo
+#       - IN: box-test-aws-ecs
+#       - TASK:
+#         - script: ./custom_script.sh
+
+# TEST deployment for BOX to Joyent Triton
+  - name: box-test-triton
+    type: tripubDeploy
+    steps:
+      - IN: box-man
+      - IN: env-test-triton
+      - IN: box-t-params
+      - IN: box-t-tpc-params
+      - IN: trigger-test-deploy-box
+      - TASK: managed
