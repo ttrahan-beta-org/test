@@ -76,17 +76,17 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
 
-# TEST deployment for BOX to Amazon ECS
-  - name: box-test-aws-ecs
-    type: ecsDeploy
-    steps:
-      - IN: box-man
-      - IN: env-test-ecs-02
-      - IN: box-t-params
-      - IN: box-t-ecs-params
-      - IN: trigger-test-deploy-box
-      - TASK: managed
-      - OUT: trigger-post-deploy-script
+# # TEST deployment for BOX to Amazon ECS
+#   - name: box-test-aws-ecs
+#     type: ecsDeploy
+#     steps:
+#       - IN: box-man
+#       - IN: env-test-ecs-02
+#       - IN: box-t-params
+#       - IN: box-t-ecs-params
+#       - IN: trigger-test-deploy-box
+#       - TASK: managed
+#       - OUT: trigger-post-deploy-script
 
 # # execute custom script
 #   - name: execute-sample-script
