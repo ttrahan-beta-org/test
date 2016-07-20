@@ -6,13 +6,13 @@ resources:
 
 # add TEST environment
 
-# # add TEST env - AWS cluster
-#   - name: env-test-ecs-02
-#     type: cluster
-#     integration: ttrahan-aws
-#     pointer:
-#       sourceName : "demo-shippable-ecs-test"
-#       region: "us-east-1"
+# add TEST env - AWS cluster
+  - name: env-test-ecs-02
+    type: cluster
+    integration: ttrahan-aws
+    pointer:
+      sourceName : "demo-shippable-ecs-test"
+      region: "us-east-1"
 
 # add TEST env - TRITON CLUSTER
   - name: env-test-triton
@@ -100,12 +100,12 @@ resources:
         DB_USERNAME: "demo"
         DB_PASSWORD: "demo"
 
-# # TEST env vars for BOX for Amazon ECS
-#   - name: box-t-ecs-params
-#     type: params
-#     version:
-#       params:
-#         ENVIRONMENT: "test-ecs"
+# TEST env vars for BOX for Amazon ECS
+  - name: box-t-ecs-params
+    type: params
+    version:
+      params:
+        ENVIRONMENT: "test-ecs"
 
 # TEST env vars for BOX for Joyent Triton
   - name: box-t-tpc-params
@@ -127,10 +127,10 @@ resources:
 
 # ################################
 
-# # repo holding custom script actions
-#   - name: custom-script-repo
-#     type: gitRepo
-#     integration: ttrahan-beta-gh
-#     pointer:
-#       sourceName: ttrahan-beta/sample-script
-#       branch: master
+# repo holding custom script actions
+  - name: custom-script-repo
+    type: gitRepo
+    integration: ttrahan-beta-gh
+    pointer:
+      sourceName: ttrahan-beta/sample-script
+      branch: master
