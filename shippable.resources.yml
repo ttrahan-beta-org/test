@@ -64,14 +64,6 @@ resources:
 
 # add BOX resources to pipeline
 
-# # REPO of BOX code
-#   - name: box-repo
-#     type: gitRepo
-#     integration: ttrahan-beta-gh
-#     pointer:
-#       sourceName: ttrahan-beta/box
-#       branch: triton
-
 # Docker Image for BOX
   - name: box-img
     type: image
@@ -113,24 +105,3 @@ resources:
     version:
       params:
         ENVIRONMENT: "test-triton"
-
-# ################################
-
-# # add deploy config for PROD environment
-# # REPO for PROD configs
-#   - name: prod-deploy
-#     type: syncRepo
-#     integration: ttrahan-beta-gh
-#     source:
-#       sourceName: ttrahan-beta/prod
-#       branch: triton
-
-# ################################
-
-# # repo holding custom script actions
-#   - name: custom-script-repo
-#     type: gitRepo
-#     integration: ttrahan-beta-gh
-#     pointer:
-#       sourceName: ttrahan-beta/sample-script
-#       branch: master
