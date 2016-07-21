@@ -13,13 +13,13 @@ jobs:
 # add visualizer pipeline workflow for CI
 # VISUALIZER JOBS - test environment
 
-# CI for VISUALIZER
-  - name: dv-ci
-    type: runCI
-    steps:
-      - IN: dv-repo
-      - TASK: managed
-      - OUT: dv-img
+# # CI for VISUALIZER
+#   - name: dv-ci
+#     type: runCI
+#     steps:
+#       - IN: dv-repo
+#       - TASK: managed
+#       - OUT: dv-img
 
 # add visualizer pipeline workflow thru hub
 
@@ -57,15 +57,15 @@ jobs:
 
 # ################################
 
-# BOX JOBS - test environment
-# 4b) add BOX pipeline workflow for CI thru TEST
-# CI for BOX
-  - name: box-ci
-    type: runCI
-    steps:
-      - IN: box-repo
-      - TASK: managed
-      - OUT: box-img
+# # BOX JOBS - test environment
+# # 4b) add BOX pipeline workflow for CI thru TEST
+# # CI for BOX
+#   - name: box-ci
+#     type: runCI
+#     steps:
+#       - IN: box-repo
+#       - TASK: managed
+#       - OUT: box-img
 
 # manifest gen for BOX
   - name: box-man
@@ -74,7 +74,7 @@ jobs:
       - IN: box-img
       - IN: box-img-opts
       - TASK: managed
-        deployMethod: upgrade
+        deployMethod: blue-green
 
 # # TEST deployment for BOX to Amazon ECS
 #   - name: box-test-aws-ecs
@@ -88,15 +88,6 @@ jobs:
 #       - TASK: managed
 #       - OUT: trigger-post-deploy-script
 
-# # execute custom script
-#   - name: execute-sample-script
-#     type: runSh
-#     steps:
-#       - IN: custom-script-repo
-#       - IN: box-test-aws-ecs
-#       - TASK:
-#         - script: ./custom_script.sh
-
 # TEST deployment for BOX to Joyent Triton
   - name: box-test-triton
     type: tripubDeploy
@@ -107,3 +98,12 @@ jobs:
       - IN: box-t-tpc-params
       - IN: trigger-test-deploy-box
       - TASK: managed
+
+# # execute custom script
+#   - name: execute-sample-script
+#     type: runSh
+#     steps:
+#       - IN: custom-script-repo
+#       - IN: box-test-aws-ecs
+#       - TASK:
+#         - script: ./custom_script.sh
