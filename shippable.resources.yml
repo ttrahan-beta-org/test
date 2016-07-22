@@ -21,6 +21,15 @@ resources:
 #     pointer:
 #       region: "us-east-1"
 
+
+################################
+
+# demo application version seed
+  - name: demo-ver
+    type: version
+    seed:
+      versionName: "1.0.0"
+
 ################################
 
 # add visualizer resources to pipeline for CI
@@ -71,12 +80,6 @@ resources:
     pointer:
       sourceName: ttrahan-beta/box
       branch: master
-
-# box version seed
-  - name: box-ver
-    type: version
-    seed:
-      versionName: "1.0.0"
 
 # Docker Image for BOX
   - name: box-img

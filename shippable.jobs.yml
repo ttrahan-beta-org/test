@@ -87,12 +87,12 @@ jobs:
       - IN: trigger-test-deploy-box
       - TASK: managed
 
-  - name: box-rel
+  - name: demo-rel
     type: release
     steps:
-      - IN: box-ver
       - IN: box-test-aws-ecs
         trigger: false
+      - IN: demo-ver
       - TASK: managed
         bump: patch
 
