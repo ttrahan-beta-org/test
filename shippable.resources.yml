@@ -64,31 +64,31 @@ resources:
 
 # add BOX resources to pipeline
 
-# # REPO of BOX code
-#   - name: box-repo
-#     type: gitRepo
-#     integration: ttrahan-beta-gh
-#     pointer:
-#       sourceName: ttrahan-beta/box
-#       branch: master
-#
-# # Docker Image for BOX
-#   - name: box-img
-#     type: image
-#     integration: ttrahan-dh
-#     pointer:
-#       sourceName: "ttrahan/box"
-#       isPull: false
-#     seed:
-#       versionName: triton.latest
-#
-# # Docker Image Options for BOX
-#   - name: box-img-opts
-#     type: dockerOptions
-#     version:
-#       memory: 64
-#       cpu-shares: 512
-#
+# REPO of BOX code
+  - name: box-repo
+    type: gitRepo
+    integration: ttrahan-beta-gh
+    pointer:
+      sourceName: ttrahan-beta/box
+      branch: master
+
+# Docker Image for BOX
+  - name: box-img
+    type: image
+    integration: ttrahan-dh
+    pointer:
+      sourceName: "ttrahan/box"
+      isPull: false
+    seed:
+      versionName: triton.latest
+
+# Docker Image Options for BOX
+  - name: box-img-opts
+    type: dockerOptions
+    version:
+      memory: 64
+      cpu-shares: 512
+
 # TEST env vars for BOX
   - name: box-t-params
     type: params
