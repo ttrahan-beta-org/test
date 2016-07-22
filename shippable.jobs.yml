@@ -4,6 +4,23 @@ jobs:
 
 ################################
 
+# # CI for VISUALIZER
+#   - name: prod-yml-sync
+#     type: rSync
+#     steps:
+#       - IN: prod-deploy
+
+# add visualizer pipeline workflow for CI
+# VISUALIZER JOBS - test environment
+
+# CI for VISUALIZER
+  - name: dv-ci
+    type: runCI
+    steps:
+      - IN: dv-repo
+      - TASK: managed
+      - OUT: dv-img
+
 # add visualizer pipeline workflow thru hub
 
 # manifest gen for VISUALIZER
@@ -17,15 +34,15 @@ jobs:
 
 # deploy visualizer to TEST
 
-# TEST deployment for VISUALIZER to Amazon ECS
-  - name: dv-test-ecs
-    type: ecsDeploy
-    steps:
-      - IN: dv-man
-      - IN: dv-params
-      - IN: env-test-ecs
-      - IN: trigger-test-deploy-dv
-      - TASK: managed
+# # TEST deployment for VISUALIZER to Amazon ECS
+#   - name: dv-test-ecs
+#     type: ecsDeploy
+#     steps:
+#       - IN: dv-man
+#       - IN: dv-params
+#       - IN: env-test-ecs
+#       - IN: trigger-test-deploy-dv
+#       - TASK: managed
 
 # TEST deployment for VISUALIZER to Joyent Triton
   - name: dv-test-triton
@@ -40,6 +57,16 @@ jobs:
 
 # ################################
 
+# BOX JOBS - test environment
+# 4b) add BOX pipeline workflow for CI thru TEST
+# CI for BOX
+  - name: box-ci
+    type: runCI
+    steps:
+      - IN: box-repo
+      - TASK: managed
+      - OUT: box-img
+
 # manifest gen for BOX
   - name: box-man
     type: manifest
@@ -47,19 +74,28 @@ jobs:
       - IN: box-img
       - IN: box-img-opts
       - TASK: managed
-        deployMethod: blue-green
+        deployMethod: upgrade
 
-# TEST deployment for BOX to Amazon ECS
-  - name: box-test-aws-ecs
-    type: ecsDeploy
-    steps:
-      - IN: box-man
-      - IN: env-test-ecs-02
-      - IN: box-t-params
-      - IN: box-t-ecs-params
-      - IN: trigger-test-deploy-box
-      - TASK: managed
-      - OUT: trigger-post-deploy-script
+# # TEST deployment for BOX to Amazon ECS
+#   - name: box-test-aws-ecs
+#     type: ecsDeploy
+#     steps:
+#       - IN: box-man
+#       - IN: env-test-ecs-02
+#       - IN: box-t-params
+#       - IN: box-t-ecs-params
+#       - IN: trigger-test-deploy-box
+#       - TASK: managed
+#       - OUT: trigger-post-deploy-script
+
+# # execute custom script
+#   - name: execute-sample-script
+#     type: runSh
+#     steps:
+#       - IN: custom-script-repo
+#       - IN: box-test-aws-ecs
+#       - TASK:
+#         - script: ./custom_script.sh
 
 # TEST deployment for BOX to Joyent Triton
   - name: box-test-triton
@@ -71,12 +107,3 @@ jobs:
       - IN: box-t-tpc-params
       - IN: trigger-test-deploy-box
       - TASK: managed
-
-# # execute custom script
-#   - name: execute-sample-script
-#     type: runSh
-#     steps:
-#       - IN: custom-script-repo
-#       - IN: box-test-aws-ecs
-#       - TASK:
-#         - script: ./custom_script.sh
