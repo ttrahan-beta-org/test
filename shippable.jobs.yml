@@ -86,7 +86,6 @@ jobs:
       - IN: box-t-ecs-params
       - IN: trigger-test-deploy-box
       - TASK: managed
-      - OUT: trigger-post-deploy-script
 
 # # execute custom script
 #   - name: execute-sample-script
