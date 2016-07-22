@@ -72,6 +72,12 @@ resources:
       sourceName: ttrahan-beta/box
       branch: master
 
+# box version seed
+  - name: box-ver
+    type: version
+    seed:
+      versionName: "1.0.0"
+
 # Docker Image for BOX
   - name: box-img
     type: image

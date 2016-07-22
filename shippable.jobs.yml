@@ -82,10 +82,19 @@ jobs:
     steps:
       - IN: box-man
       - IN: env-test-ecs
-      - IN: box-t-params
       - IN: box-t-ecs-params
+      - IN: box-t-params
       - IN: trigger-test-deploy-box
       - TASK: managed
+
+  - name: box-rel
+    type: release
+    steps:
+      - IN: box-ver
+      - IN: box-test-aws
+        trigger: false
+      - TASK: managed
+        bump: patch
 
 # # execute custom script
 #   - name: execute-sample-script
