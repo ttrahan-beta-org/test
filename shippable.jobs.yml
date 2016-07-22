@@ -91,7 +91,7 @@ jobs:
     type: release
     steps:
       - IN: box-ver
-      - IN: box-test-aws
+      - IN: box-test-aws-ecs
         trigger: false
       - TASK: managed
         bump: patch
