@@ -31,7 +31,7 @@ resources:
     integration: ttrahan-beta-gh
     pointer:
       sourceName: ttrahan-beta/dv
-      branch: triton
+      branch: master
 
 # Docker Image for VISUALIZER
   - name: dv-img
@@ -70,7 +70,7 @@ resources:
 #     integration: ttrahan-beta-gh
 #     pointer:
 #       sourceName: ttrahan-beta/box
-#       branch: vnext
+#       branch: master
 #
 # # Docker Image for BOX
 #   - name: box-img
