@@ -6,20 +6,20 @@ resources:
 
 # add TEST environment
 
-# # add TEST env - AWS cluster
-#   - name: env-test-ecs-02
-#     type: cluster
-#     integration: ttrahan-aws
-#     pointer:
-#       sourceName : "demo-shippable-ecs-test"
-#       region: "us-east-1"
-
-# add TEST env - TRITON CLUSTER
-  - name: env-test-triton
+# add TEST env - AWS cluster
+  - name: env-test-ecs
     type: cluster
-    integration: ttrahan-tpc
+    integration: ttrahan-aws
     pointer:
+      sourceName : "demo-shippable-ecs-test"
       region: "us-east-1"
+
+# # add TEST env - TRITON CLUSTER
+#   - name: env-test-triton
+#     type: cluster
+#     integration: ttrahan-tpc
+#     pointer:
+#       region: "us-east-1"
 
 ################################
 
@@ -64,41 +64,41 @@ resources:
 
 # add BOX resources to pipeline
 
-# REPO of BOX code
-  - name: box-repo
-    type: gitRepo
-    integration: ttrahan-beta-gh
-    pointer:
-      sourceName: ttrahan-beta/box
-      branch: vnext
-
-# Docker Image for BOX
-  - name: box-img
-    type: image
-    integration: ttrahan-dh
-    pointer:
-      sourceName: "ttrahan/box"
-      isPull: false
-    seed:
-      versionName: triton.latest
-
-# Docker Image Options for BOX
-  - name: box-img-opts
-    type: dockerOptions
-    version:
-      memory: 64
-      cpu-shares: 512
-
-# TEST env vars for BOX
-  - name: box-t-params
-    type: params
-    version:
-      params:
-        DB_HOST: "ds017544.mlab.com"
-        DB_NAME: "box-pipev2"
-        DB_PORT: "17544"
-        DB_USERNAME: "demo"
-        DB_PASSWORD: "demo"
+# # REPO of BOX code
+#   - name: box-repo
+#     type: gitRepo
+#     integration: ttrahan-beta-gh
+#     pointer:
+#       sourceName: ttrahan-beta/box
+#       branch: vnext
+#
+# # Docker Image for BOX
+#   - name: box-img
+#     type: image
+#     integration: ttrahan-dh
+#     pointer:
+#       sourceName: "ttrahan/box"
+#       isPull: false
+#     seed:
+#       versionName: triton.latest
+#
+# # Docker Image Options for BOX
+#   - name: box-img-opts
+#     type: dockerOptions
+#     version:
+#       memory: 64
+#       cpu-shares: 512
+#
+# # TEST env vars for BOX
+#   - name: box-t-params
+#     type: params
+#     version:
+#       params:
+#         DB_HOST: "ds017544.mlab.com"
+#         DB_NAME: "box-pipev2"
+#         DB_PORT: "17544"
+#         DB_USERNAME: "demo"
+#         DB_PASSWORD: "demo"
 
 # # TEST env vars for BOX for Amazon ECS
 #   - name: box-t-ecs-params

@@ -34,47 +34,47 @@ jobs:
 
 # deploy visualizer to TEST
 
-# # TEST deployment for VISUALIZER to Amazon ECS
-#   - name: dv-test-ecs
-#     type: ecsDeploy
-#     steps:
-#       - IN: dv-man
-#       - IN: dv-params
-#       - IN: env-test-ecs
-#       - IN: trigger-test-deploy-dv
-#       - TASK: managed
-
-# TEST deployment for VISUALIZER to Joyent Triton
-  - name: dv-test-triton
-    type: tripubDeploy
+# TEST deployment for VISUALIZER to Amazon ECS
+  - name: dv-test-ecs
+    type: ecsDeploy
     steps:
       - IN: dv-man
       - IN: dv-params
-      - IN: box-t-tpc-params
-      - IN: env-test-triton
+      - IN: env-test-ecs
       - IN: trigger-test-deploy-dv
       - TASK: managed
 
+# # TEST deployment for VISUALIZER to Joyent Triton
+#   - name: dv-test-triton
+#     type: tripubDeploy
+#     steps:
+#       - IN: dv-man
+#       - IN: dv-params
+#       - IN: box-t-tpc-params
+#       - IN: env-test-triton
+#       - IN: trigger-test-deploy-dv
+#       - TASK: managed
+
 # ################################
 
-# BOX JOBS - test environment
-# 4b) add BOX pipeline workflow for CI thru TEST
-# CI for BOX
-  - name: box-ci
-    type: runCI
-    steps:
-      - IN: box-repo
-      - TASK: managed
-      - OUT: box-img
-
-# manifest gen for BOX
-  - name: box-man
-    type: manifest
-    steps:
-      - IN: box-img
-      - IN: box-img-opts
-      - TASK: managed
-        deployMethod: upgrade
+# # BOX JOBS - test environment
+# # 4b) add BOX pipeline workflow for CI thru TEST
+# # CI for BOX
+#   - name: box-ci
+#     type: runCI
+#     steps:
+#       - IN: box-repo
+#       - TASK: managed
+#       - OUT: box-img
+#
+# # manifest gen for BOX
+#   - name: box-man
+#     type: manifest
+#     steps:
+#       - IN: box-img
+#       - IN: box-img-opts
+#       - TASK: managed
+#         deployMethod: upgrade
 
 # # TEST deployment for BOX to Amazon ECS
 #   - name: box-test-aws-ecs
@@ -97,13 +97,13 @@ jobs:
 #       - TASK:
 #         - script: ./custom_script.sh
 
-# TEST deployment for BOX to Joyent Triton
-  - name: box-test-triton
-    type: tripubDeploy
-    steps:
-      - IN: box-man
-      - IN: env-test-triton
-      - IN: box-t-params
-      - IN: box-t-tpc-params
-      - IN: trigger-test-deploy-box
-      - TASK: managed
+# # TEST deployment for BOX to Joyent Triton
+#   - name: box-test-triton
+#     type: tripubDeploy
+#     steps:
+#       - IN: box-man
+#       - IN: env-test-triton
+#       - IN: box-t-params
+#       - IN: box-t-tpc-params
+#       - IN: trigger-test-deploy-box
+#       - TASK: managed
