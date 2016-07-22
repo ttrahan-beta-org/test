@@ -25,14 +25,6 @@ resources:
 
 # add visualizer resources to pipeline for CI
 
-# # REPO of VISUALIZER code
-#   - name: dv-repo
-#     type: gitRepo
-#     integration: ttrahan-beta-gh
-#     pointer:
-#       sourceName: ttrahan-beta/dv
-#       branch: triton
-
 # Docker Image for VISUALIZER
   - name: dv-img
     type: image
