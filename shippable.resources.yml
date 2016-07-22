@@ -31,7 +31,7 @@ resources:
     integration: ttrahan-beta-gh
     pointer:
       sourceName: ttrahan-beta/dv
-      branch: triton
+      branch: master
 
 # Docker Image for VISUALIZER
   - name: dv-img
@@ -41,7 +41,7 @@ resources:
       sourceName: ttrahan/dv
       isPull: false
     seed:
-      versionName: triton.latest
+      versionName: master.latest
 
 # Docker Image Options for VISUALIZER
   - name: dv-img-opts
@@ -80,7 +80,7 @@ resources:
       sourceName: "ttrahan/box"
       isPull: false
     seed:
-      versionName: triton.latest
+      versionName: master.latest
 
 # Docker Image Options for BOX
   - name: box-img-opts
@@ -107,12 +107,12 @@ resources:
       params:
         ENVIRONMENT: "test-ecs"
 
-# TEST env vars for BOX for Joyent Triton
-  - name: box-t-tpc-params
-    type: params
-    version:
-      params:
-        ENVIRONMENT: "test-triton"
+# # TEST env vars for BOX for Joyent Triton
+#   - name: box-t-tpc-params
+#     type: params
+#     version:
+#       params:
+#         ENVIRONMENT: "test-triton"
 
 # ################################
 
