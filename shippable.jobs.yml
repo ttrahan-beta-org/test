@@ -76,7 +76,7 @@ jobs:
       - TASK: managed
 
 # TEST deployment for BOX to Amazon ECS
-  - name: box-test-aws-ecs-2
+  - name: box-test-ecs
     type: ecsDeploy
     steps:
       - IN: box-man
@@ -87,11 +87,15 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
 
+# ################################
 
+# increment release version
   - name: demo-rel
     type: release
     steps:
-      - IN: box-test-aws-ecs-2
+      - IN: box-test-ecs
+        trigger: true
+      - IN: dv-test-aws-ecs
         trigger: true
       - IN: demo-ver
       - TASK: managed
