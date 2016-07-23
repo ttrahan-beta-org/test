@@ -96,7 +96,7 @@ jobs:
       - IN: demo-ver
       - IN: box-test-ecs
         trigger: true
-      - IN: dv-test-aws-ecs
+      - IN: dv-test-ecs
         trigger: true
       - TASK: managed
         bump: patch
