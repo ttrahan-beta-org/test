@@ -14,6 +14,7 @@ jobs:
 # VISUALIZER JOBS - test environment
 
 # CI for VISUALIZER
+# note: for demo purposes only, do not use
   - name: dv-ci
     type: runCI
     steps:
@@ -40,6 +41,7 @@ jobs:
     steps:
       - IN: dv-man
       - IN: dv-params
+        applyTo: dv-img
       - IN: env-test-ecs
       - IN: trigger-test-deploy-dv
       - TASK: managed
@@ -87,29 +89,6 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
 
-# ################################
-
-# increment release version
-  - name: demo-rel
-    type: release
-    steps:
-      - IN: demo-ver
-      - IN: box-test-ecs
-        trigger: true
-      - IN: dv-test-ecs
-        trigger: true
-      - TASK: managed
-        bump: patch
-
-# # execute custom script
-#   - name: execute-sample-script
-#     type: runSh
-#     steps:
-#       - IN: custom-script-repo
-#       - IN: box-test-aws-ecs
-#       - TASK:
-#         - script: ./custom_script.sh
-
 # # TEST deployment for BOX to Joyent Triton
 #   - name: box-test-triton
 #     type: tripubDeploy
@@ -120,3 +99,30 @@ jobs:
 #       - IN: box-t-tpc-params
 #       - IN: trigger-test-deploy-box
 #       - TASK: managed
+
+# ################################
+
+# # increment release version
+#   - name: demo-rel
+#     type: release
+#     steps:
+#       - IN: demo-ver
+#       - IN: box-test-ecs
+#         trigger: true
+#       - IN: dv-test-ecs
+#         trigger: true
+#       - TASK: managed
+#         bump: patch
+
+# ################################
+
+# # execute custom script
+#   - name: execute-sample-script
+#     type: runSh
+#     steps:
+#       - IN: custom-script-repo
+#       - IN: box-test-aws-ecs
+#       - TASK:
+#         - script: ./custom_script.sh
+
+# ################################

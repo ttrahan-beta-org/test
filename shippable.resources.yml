@@ -24,7 +24,7 @@ resources:
 
 ################################
 
-# demo application version seed
+# set application version seed
   - name: demo-ver
     type: version
     seed:
@@ -126,6 +126,8 @@ resources:
 # ################################
 
 # # add deploy config for PROD environment
+# # this can also be done in the UI with 'Add Resource' on Resources tab
+#
 # # REPO for PROD configs
 #   - name: prod-deploy
 #     type: syncRepo
