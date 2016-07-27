@@ -87,8 +87,6 @@ jobs:
       - IN: trigger-test-deploy-box
       - IN: env-test-ecs
       - IN: box-t-ecs-params
-#       - IN: box-t-tpc-params
-#       - IN: trigger-test-deploy-box
       - TASK: managed
         deployMethod: upgrade
 
@@ -98,7 +96,6 @@ jobs:
     steps:
       - IN: box-man
       - IN: box-t-params
-      - IN: trigger-test-deploy-box
       - IN: box-t-tpc-params
       - IN: trigger-test-deploy-box
       - TASK: managed
