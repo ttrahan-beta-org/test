@@ -37,22 +37,23 @@ jobs:
 
 # TEST deployment for VISUALIZER to Amazon ECS
   - name: dv-test-ecs
-    type: ecsDeploy
+    type: deploy
     steps:
       - IN: dv-man
       - IN: dv-params
         applyTo: dv-img
-      - IN: env-test-ecs
       - IN: trigger-test-deploy-dv
+      - IN: env-test-ecs
+#       - IN: env-test-triton
       - TASK: managed
 
 # # TEST deployment for VISUALIZER to Joyent Triton
 #   - name: dv-test-triton
-#     type: tripubDeploy
+#     type: deploy
 #     steps:
 #       - IN: dv-man
 #       - IN: dv-params
-#       - IN: box-t-tpc-params
+#         applyTo: dv-img
 #       - IN: env-test-triton
 #       - IN: trigger-test-deploy-dv
 #       - TASK: managed
@@ -79,13 +80,15 @@ jobs:
 
 # TEST deployment for BOX to Amazon ECS
   - name: box-test-ecs
-    type: ecsDeploy
+    type: deploy
     steps:
       - IN: box-man
-      - IN: env-test-ecs
-      - IN: box-t-ecs-params
       - IN: box-t-params
       - IN: trigger-test-deploy-box
+      - IN: env-test-ecs
+      - IN: box-t-ecs-params
+#       - IN: box-t-tpc-params
+#       - IN: trigger-test-deploy-box
       - TASK: managed
         deployMethod: upgrade
 
@@ -96,8 +99,6 @@ jobs:
 #       - IN: box-man
 #       - IN: env-test-triton
 #       - IN: box-t-params
-#       - IN: box-t-tpc-params
-#       - IN: trigger-test-deploy-box
 #       - TASK: managed
 
 # ################################
