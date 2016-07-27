@@ -73,13 +73,13 @@ resources:
 
 # add BOX resources to pipeline
 
-# # REPO of BOX code
-#   - name: box-repo
-#     type: gitRepo
-#     integration: ttrahan-beta-gh
-#     pointer:
-#       sourceName: ttrahan-beta/box
-#       branch: master
+# REPO of BOX code
+  - name: box-repo
+    type: gitRepo
+    integration: ttrahan-beta-gh
+    pointer:
+      sourceName: ttrahan-beta/box
+      branch: master
 
 # Docker Image for BOX
   - name: box-img
