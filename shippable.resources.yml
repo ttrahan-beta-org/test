@@ -62,6 +62,16 @@ resources:
         - 80:80
       publishAllPorts : true
 
+# # Docker Image Options for VISUALIZER
+#   - name: dv-img-opts-prod
+#     type: dockerOptions
+#     version:
+#       memory: 512
+#       cpuShares: 1024
+#       portMappings:
+#         - 80:80
+#       publishAllPorts : true
+
 # env vars for VISUALIZER
   - name: dv-params
     type: params
