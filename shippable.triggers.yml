@@ -7,7 +7,7 @@ triggers:
   - name: trigger-test-deploy-box
     type: trigger
     version:
-      counter: 9
+      counter: 10
 
   # - name: trigger-post-deploy-script
   #   type: trigger
