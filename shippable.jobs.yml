@@ -92,14 +92,14 @@ jobs:
 
 # TEST deployment for BOX to Amazon ECS
   - name: box-test-triton
-    type: tpcDeploy
+    type: deploy
     steps:
       - IN: box-man
       - IN: box-t-params
       - IN: box-t-tpc-params
       - IN: trigger-test-deploy-box
       - TASK: managed
-        deployMethod: upgrade
+        deployMethod: blueGreen
 
 
 # ################################
