@@ -19,7 +19,7 @@ jobs:
 
 # TEST deployment for VISUALIZER to Amazon ECS
   - name: dv-test-ecs
-    type: ecsDeploy
+    type: deploy
     steps:
       - IN: dv-man
       - IN: dv-params
@@ -29,7 +29,7 @@ jobs:
 
 # TEST deployment for VISUALIZER to Joyent Triton
   - name: dv-test-triton
-    type: tripubDeploy
+    type: deploy
     steps:
       - IN: dv-man
       - IN: dv-params
@@ -51,7 +51,7 @@ jobs:
 
 # TEST deployment for BOX to Amazon ECS
   - name: box-test-aws-ecs
-    type: ecsDeploy
+    type: deploy
     steps:
       - IN: box-man
       - IN: env-test-ecs-02
@@ -63,7 +63,7 @@ jobs:
 
 # TEST deployment for BOX to Joyent Triton
   - name: box-test-triton
-    type: tripubDeploy
+    type: deploy
     steps:
       - IN: box-man
       - IN: env-test-triton
