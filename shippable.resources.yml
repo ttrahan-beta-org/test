@@ -6,20 +6,20 @@ resources:
 
 # add TEST environment
 
-# add TEST env - AWS cluster
-  - name: env-test-ecs
-    type: cluster
-    integration: ttrahan-aws
-    pointer:
-      sourceName : "demo-shippable-ecs-test"
-      region: "us-east-1"
-
-# # add TEST env - TRITON CLUSTER
-#   - name: env-test-triton
+# # add TEST env - AWS cluster
+#   - name: env-test-ecs
 #     type: cluster
-#     integration: ttrahan-tpc
+#     integration: ttrahan-aws
 #     pointer:
+#       sourceName : "demo-shippable-ecs-test"
 #       region: "us-east-1"
+
+# add TEST env - TRITON CLUSTER
+  - name: env-test-triton
+    type: cluster
+    integration: ttrahan-tpc
+    pointer:
+      region: "us-east-1"
 
 
 ################################
@@ -109,19 +109,19 @@ resources:
         DB_USERNAME: "demo"
         DB_PASSWORD: "demo"
 
-# TEST env vars for BOX for Amazon ECS
-  - name: box-t-ecs-params
-    type: params
-    version:
-      params:
-        ENVIRONMENT: "test-ecs"
-
-# # TEST env vars for BOX for Joyent Triton
-#   - name: box-t-tpc-params
+# # TEST env vars for BOX for Amazon ECS
+#   - name: box-t-ecs-params
 #     type: params
 #     version:
 #       params:
-#         ENVIRONMENT: "test-triton"
+#         ENVIRONMENT: "test-ecs"
+
+# TEST env vars for BOX for Joyent Triton
+  - name: box-t-tpc-params
+    type: params
+    version:
+      params:
+        ENVIRONMENT: "test-triton"
 
 # ################################
 
