@@ -99,7 +99,7 @@ jobs:
       - IN: box-t-tpc-params
       - IN: trigger-test-deploy-box
       - TASK: managed
-        deployMethod: blue-green
+        deployMethod: upgrade
 
 
 # ################################
