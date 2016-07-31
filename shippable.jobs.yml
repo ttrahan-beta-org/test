@@ -17,15 +17,15 @@ jobs:
 
 # deploy visualizer to TEST
 
-# TEST deployment for VISUALIZER to Amazon ECS
-  - name: dv-test-ecs
-    type: deploy
-    steps:
-      - IN: dv-man
-      - IN: dv-params
-      - IN: env-test-ecs
-      - IN: trigger-test-deploy-dv
-      - TASK: managed
+# # TEST deployment for VISUALIZER to Amazon ECS
+#   - name: dv-test-ecs
+#     type: deploy
+#     steps:
+#       - IN: dv-man
+#       - IN: dv-params
+#       - IN: env-test-ecs
+#       - IN: trigger-test-deploy-dv
+#       - TASK: managed
 
 # TEST deployment for VISUALIZER to Joyent Triton
   - name: dv-test-triton
@@ -49,17 +49,17 @@ jobs:
       - TASK: managed
         deployMethod: blue-green
 
-# TEST deployment for BOX to Amazon ECS
-  - name: box-test-aws-ecs
-    type: deploy
-    steps:
-      - IN: box-man
-      - IN: env-test-ecs-02
-      - IN: box-t-params
-      - IN: box-t-ecs-params
-      - IN: trigger-test-deploy-box
-      - TASK: managed
-      - OUT: trigger-post-deploy-script
+# # TEST deployment for BOX to Amazon ECS
+#   - name: box-test-aws-ecs
+#     type: deploy
+#     steps:
+#       - IN: box-man
+#       - IN: env-test-ecs-02
+#       - IN: box-t-params
+#       - IN: box-t-ecs-params
+#       - IN: trigger-test-deploy-box
+#       - TASK: managed
+#       - OUT: trigger-post-deploy-script
 
 # TEST deployment for BOX to Joyent Triton
   - name: box-test-triton
