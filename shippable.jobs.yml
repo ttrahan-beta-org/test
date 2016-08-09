@@ -29,16 +29,16 @@ jobs:
 #       - IN: env-test-triton
       - TASK: managed
 
-# TEST deployment for VISUALIZER to Joyent Triton
-  - name: dv-test-triton
-    type: deploy
-    steps:
-      - IN: dv-man
-      - IN: dv-params
-        applyTo: dv-img
-      - IN: env-test-triton
-      - IN: trigger-test-deploy-dv
-      - TASK: managed
+# # TEST deployment for VISUALIZER to Joyent Triton
+#   - name: dv-test-triton
+#     type: deploy
+#     steps:
+#       - IN: dv-man
+#       - IN: dv-params
+#         applyTo: dv-img
+#       - IN: env-test-triton
+#       - IN: trigger-test-deploy-dv
+#       - TASK: managed
 
 # ################################
 
@@ -62,17 +62,17 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
 
-# TEST deployment for BOX to Amazon ECS
-  - name: box-test-triton
-    type: deploy
-    steps:
-      - IN: box-man
-      - IN: box-t-tpc-params
-      - IN: box-t-params
-      - IN: trigger-test-deploy-box
-      - IN: env-test-triton
-      - TASK: managed
-        deployMethod: upgrade
+# # TEST deployment for BOX to Amazon ECS
+#   - name: box-test-triton
+#     type: deploy
+#     steps:
+#       - IN: box-man
+#       - IN: box-t-tpc-params
+#       - IN: box-t-params
+#       - IN: trigger-test-deploy-box
+#       - IN: env-test-triton
+#       - TASK: managed
+#         deployMethod: upgrade
 
 
 # ################################

@@ -14,21 +14,21 @@ resources:
       sourceName : "demo-shippable-ecs-test"
       region: "us-east-1"
 
-# add TEST env - TRITON CLUSTER
-  - name: env-test-triton
-    type: cluster
-    integration: ttrahan-tpc
-    pointer:
-      region: "us-east-1"
+# # add TEST env - TRITON CLUSTER
+#   - name: env-test-triton
+#     type: cluster
+#     integration: ttrahan-tpc
+#     pointer:
+#       region: "us-east-1"
 
 
 ################################
 
-# set application version seed
-  - name: demo-ver
-    type: version
-    seed:
-      versionName: "1.0.0"
+# # set application version seed
+#   - name: demo-ver
+#     type: version
+#     seed:
+#       versionName: "1.0.0"
 
 ################################
 
@@ -108,12 +108,12 @@ resources:
       params:
         ENVIRONMENT: "test-ecs"
 
-# TEST env vars for BOX for Joyent Triton
-  - name: box-t-tpc-params
-    type: params
-    version:
-      params:
-        ENVIRONMENT: "test-triton"
+# # TEST env vars for BOX for Joyent Triton
+#   - name: box-t-tpc-params
+#     type: params
+#     version:
+#       params:
+#         ENVIRONMENT: "test-triton"
 
 # ################################
 
