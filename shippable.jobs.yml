@@ -4,24 +4,6 @@ jobs:
 
 ################################
 
-# # CI for VISUALIZER
-#   - name: prod-yml-sync
-#     type: rSync
-#     steps:
-#       - IN: prod-deploy
-
-# add visualizer pipeline workflow for CI
-# VISUALIZER JOBS - test environment
-
-# # CI for VISUALIZER
-# # note: for demo purposes only, do not use
-#   - name: dv-ci
-#     type: runCI
-#     steps:
-#       - IN: dv-repo
-#       - TASK: managed
-#       - OUT: dv-img
-
 # add visualizer pipeline workflow thru hub
 
 # manifest gen for VISUALIZER
@@ -35,17 +17,17 @@ jobs:
 
 # deploy visualizer to TEST
 
-# # TEST deployment for VISUALIZER to Amazon ECS
-#   - name: dv-test-ecs
-#     type: deploy
-#     steps:
-#       - IN: dv-man
-#       - IN: dv-params
-#         applyTo: dv-img
-#       - IN: trigger-test-deploy-dv
-#       - IN: env-test-ecs
-# #       - IN: env-test-triton
-#       - TASK: managed
+# TEST deployment for VISUALIZER to Amazon ECS
+  - name: dv-test-ecs
+    type: deploy
+    steps:
+      - IN: dv-man
+      - IN: dv-params
+        applyTo: dv-img
+      - IN: trigger-test-deploy-dv
+      - IN: env-test-ecs
+#       - IN: env-test-triton
+      - TASK: managed
 
 # TEST deployment for VISUALIZER to Joyent Triton
   - name: dv-test-triton
@@ -60,16 +42,6 @@ jobs:
 
 # ################################
 
-# # BOX JOBS - test environment
-# # 4b) add BOX pipeline workflow for CI thru TEST
-# # CI for BOX
-#   - name: box-ci
-#     type: runCI
-#     steps:
-#       - IN: box-repo
-#       - TASK: managed
-#       - OUT: box-img
-
 # manifest gen for BOX
   - name: box-man
     type: manifest
@@ -78,17 +50,17 @@ jobs:
       - IN: box-img-opts
       - TASK: managed
 
-# # TEST deployment for BOX to Amazon ECS
-#   - name: box-test-ecs
-#     type: deploy
-#     steps:
-#       - IN: box-man
-#       - IN: box-t-params
-#       - IN: trigger-test-deploy-box
-#       - IN: env-test-ecs
-#       - IN: box-t-ecs-params
-#       - TASK: managed
-#         deployMethod: upgrade
+# TEST deployment for BOX to Amazon ECS
+  - name: box-test-ecs
+    type: deploy
+    steps:
+      - IN: box-man
+      - IN: box-t-params
+      - IN: trigger-test-deploy-box
+      - IN: env-test-ecs
+      - IN: box-t-ecs-params
+      - TASK: managed
+        deployMethod: upgrade
 
 # TEST deployment for BOX to Amazon ECS
   - name: box-test-triton
