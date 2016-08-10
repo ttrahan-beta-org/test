@@ -116,6 +116,13 @@ resources:
       params:
         ENVIRONMENT: "test-ecs"
 
+# TEST env vars for BOX for Amazon ECS
+  - name: box-t-ddc-params
+    type: params
+    version:
+      params:
+        ENVIRONMENT: "test-ddc"
+
 # # TEST env vars for BOX for Joyent Triton
 #   - name: box-t-tpc-params
 #     type: params
