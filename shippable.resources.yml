@@ -14,6 +14,14 @@ resources:
       sourceName : "demo-shippable-ecs-test"
       region: "us-east-1"
 
+# add TEST env - Docker Datacenter
+  - name: env-test-ecs
+    type: cluster
+    integration: ttrahan-aws
+    pointer:
+      sourceName : "demo-shippable-ecs-test"
+      region: "us-east-1"
+
 # # add TEST env - TRITON CLUSTER
 #   - name: env-test-triton
 #     type: cluster
@@ -43,7 +51,7 @@ resources:
       versionName: master.latest
 
 # Docker Image Options for VISUALIZER
-  - name: dv-img-opts
+  - name: dv-img-opts-test
     type: dockerOptions
     version:
       memory: 128
@@ -52,12 +60,18 @@ resources:
         - 80:80
       publishAllPorts : true
 
+  - name: dv-img-opts-prod
+    type: dockerOptions
+    version:
+      memory: 256
+      cpuShares: 512
+
 # env vars for VISUALIZER
   - name: dv-params
     type: params
     version:
       params:
-        MONGO_API_URL: "https://api.mlab.com/api/1/databases/box-pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91"
+        secure: bPrYHvItz6Ya/JLCmhZywq2iw3OltLzpWAQQYrNrrKv9cq1EF3LA7W0FaUe2V/87gmwX5Ed7QUoIDykFVuZQUGbfkVAupapdOcJHzR3rK5+JZy7WqgWSMW5YRVdj6Xrmu4vvkqGj7MDot1UT22lAxrvpSd3fuz38bLRpiHk1onBPX8CQ1U5hpPbUPn2ivW0Iy42f8DGLdpJmuVU9I4CIFBwdJ8cw+aq/HqQDk+x2LJMgNZgHFzVgFiCOKiyJhFpMxusHwAlNFZw8U4/EwY/1Y0il/4JOepGkQLl/vX3IVVzYkGNlCAfUqIva/HlQP/0bEYcZYy4CHPM5Dj1A/CBncw==
 
 # # Docker Image Options for VISUALIZER
 #   - name: dv-img-opts-prod
@@ -97,9 +111,7 @@ resources:
       params:
         DB_HOST: "ds017544.mlab.com"
         DB_NAME: "box-pipev2"
-        DB_PORT: "17544"
-        DB_USERNAME: "demo"
-        DB_PASSWORD: "demo"
+        secure: XYG3MLnXz/yuXsKkt+P5t4a8VZCVt22rxieCEQObECyAujwMVUELy7a9O6BXAyoyRcteEJbKmPZk4+q8Tsnng0WNXxkzxaoOAB5NlDPmpJa3+JS3eGxdWhZ/qyHIEGWUYDPx/pe19Ww+1XTof6M0/oNwRwcRmSm+ESl2g8/4mx4EopMP9zcM+jboaz1ijG/xavINiQv+lUHKZNAg8yifsIE96wWF/PTGQ2c2+3s7S06LS6h4QOCOR99lh56C/LTJkI5r0GM5vWEIMkxHHrTAvu7khONG9NQ3hJb7NF7Co7w5VWCE4YzzkDZJtMG1e8+bqZ0EcZDWVJSzUf0Sd75rBg==
 
 # TEST env vars for BOX for Amazon ECS
   - name: box-t-ecs-params
