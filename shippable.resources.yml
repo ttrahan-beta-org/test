@@ -51,7 +51,7 @@ resources:
       versionName: master.latest
 
 # Docker Image Options for VISUALIZER
-  - name: dv-img-opts-test
+  - name: dv-img-opts
     type: dockerOptions
     version:
       memory: 128
@@ -59,12 +59,6 @@ resources:
       portMappings:
         - 80:80
       publishAllPorts : true
-
-  - name: dv-img-opts-prod
-    type: dockerOptions
-    version:
-      memory: 256
-      cpuShares: 512
 
 # env vars for VISUALIZER
   - name: dv-params
