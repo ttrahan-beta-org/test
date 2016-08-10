@@ -15,7 +15,7 @@ resources:
       region: "us-east-1"
 
 # add TEST env - Docker Datacenter
-  - name: env-test-ecs
+  - name: env-test-ddc
     type: cluster
     integration: ttrahan-ddc
     pointer:
