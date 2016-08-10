@@ -17,7 +17,7 @@ resources:
 # add TEST env - Docker Datacenter
   - name: env-test-ecs
     type: cluster
-    integration: ttrahan-aws
+    integration: ttrahan-ddc
     pointer:
       sourceName : "demo-shippable-ecs-test"
       region: "us-east-1"
