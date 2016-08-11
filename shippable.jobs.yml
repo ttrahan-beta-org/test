@@ -73,17 +73,17 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
 
-# TEST deployment for BOX to Docker Datacenter
-  - name: box-test-ddc
-    type: deploy
-    steps:
-      - IN: box-man
-      - IN: box-t-params
-      - IN: trigger-test-deploy-box
-      - IN: env-test-ddc
-      - IN: box-t-ddc-params
-      - TASK: managed
-        deployMethod: upgrade
+# # TEST deployment for BOX to Docker Datacenter
+#   - name: box-test-ddc
+#     type: deploy
+#     steps:
+#       - IN: box-man
+#       - IN: box-t-params
+#       - IN: trigger-test-deploy-box
+#       - IN: env-test-ddc
+#       - IN: box-t-ddc-params
+#       - TASK: managed
+#         deployMethod: upgrade
 
 # # TEST deployment for BOX to Amazon ECS
 #   - name: box-test-triton
