@@ -54,8 +54,8 @@ resources:
   - name: dv-img-opts
     type: dockerOptions
     version:
-      memory: 128
-      cpuShares: 256
+      memory: 64
+      cpuShares: 128
       portMappings:
         - 80:80
       publishAllPorts : true
@@ -96,7 +96,7 @@ resources:
     type: dockerOptions
     version:
       memory: 64
-      cpu-shares: 512
+      cpu-shares: 128
 
 # TEST env vars for BOX
   - name: box-t-params
