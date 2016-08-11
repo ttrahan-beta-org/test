@@ -29,16 +29,16 @@ jobs:
 #       - IN: env-test-triton
       - TASK: managed
 
-# TEST deployment for VISUALIZER to Docker Datacenter
-  - name: dv-test-ddc
-    type: deploy
-    steps:
-      - IN: dv-man
-      - IN: dv-params
-        applyTo: dv-img
-      - IN: trigger-test-deploy-dv
-      - IN: env-test-ddc
-      - TASK: managed
+# # TEST deployment for VISUALIZER to Docker Datacenter
+#   - name: dv-test-ddc
+#     type: deploy
+#     steps:
+#       - IN: dv-man
+#       - IN: dv-params
+#         applyTo: dv-img
+#       - IN: trigger-test-deploy-dv
+#       - IN: env-test-ddc
+#       - TASK: managed
 
 # # TEST deployment for VISUALIZER to Joyent Triton
 #   - name: dv-test-triton
