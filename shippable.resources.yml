@@ -14,13 +14,13 @@ resources:
       sourceName : "demo-shippable-ecs-test"
       region: "us-east-1"
 
-# add TEST env - Docker Datacenter
-  - name: env-test-ddc
-    type: cluster
-    integration: ttrahan-ddc
-    pointer:
-      sourceName : "demo-shippable-ecs-test"
-      region: "us-east-1"
+# # add TEST env - Docker Datacenter
+#   - name: env-test-ddc
+#     type: cluster
+#     integration: ttrahan-ddc
+#     pointer:
+#       sourceName : "demo-shippable-ecs-test"
+#       region: "us-east-1"
 
 # # add TEST env - TRITON CLUSTER
 #   - name: env-test-triton
@@ -32,11 +32,17 @@ resources:
 
 ################################
 
-# # set application version seed
-#   - name: demo-ver
-#     type: version
-#     seed:
-#       versionName: "1.0.0"
+# set application version seed
+  - name: demo-ver-dv
+    type: version
+    seed:
+      versionName: "1.0.0"
+
+# set application version seed
+  - name: demo-ver-box
+    type: version
+    seed:
+      versionName: "1.0.0"
 
 ################################
 
@@ -116,12 +122,12 @@ resources:
       params:
         ENVIRONMENT: "test-ecs"
 
-# TEST env vars for BOX for Amazon ECS
-  - name: box-t-ddc-params
-    type: params
-    version:
-      params:
-        ENVIRONMENT: "test-ddc"
+# # TEST env vars for BOX for Amazon ECS
+#   - name: box-t-ddc-params
+#     type: params
+#     version:
+#       params:
+#         ENVIRONMENT: "test-ddc"
 
 # # TEST env vars for BOX for Joyent Triton
 #   - name: box-t-tpc-params
