@@ -107,9 +107,9 @@ jobs:
       - IN: demo-ver-dv
       - IN: demo-ver-box
       - IN: box-test-ecs
-        trigger: true
+        switch: off
       - IN: dv-test-ecs
-        trigger: true
+        switch: off
       - TASK: managed
         bump: patch
 

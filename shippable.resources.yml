@@ -36,7 +36,7 @@ resources:
   - name: demo-ver-dv
     type: version
     seed:
-      versionName: "1.0.0"
+      versionName: "1.3.0"
 
 # set application version seed
   - name: demo-ver-box
