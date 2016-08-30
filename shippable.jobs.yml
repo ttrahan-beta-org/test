@@ -100,18 +100,27 @@ jobs:
 
 # ################################
 
-# increment release version
-  - name: demo-rel
+# increment release version - BOX
+  - name: demo-rel-box-rc
     type: release
     steps:
-      - IN: demo-ver-dv
-      - IN: demo-ver-box
       - IN: box-test-ecs
         switch: off
-      - IN: dv-test-ecs
+      - IN: demo-ver-box
         switch: off
+      - IN: trigger-box-release-candidate
       - TASK: managed
-        bump: patch
+        bump: rc
+
+# # increment release version - DV
+#   - name: demo-rel-dv
+#     type: release
+#     steps:
+#       - IN: demo-ver-dv
+#       - IN: dv-test-ecs
+#         switch: off
+#       - TASK: managed
+#         bump: patch
 
 # ################################
 
