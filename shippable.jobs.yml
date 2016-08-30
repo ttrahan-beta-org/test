@@ -53,6 +53,16 @@ jobs:
 
 # ################################
 
+# increment release version - BOX
+  - name: demo-rel-box
+    type: release
+    steps:
+      - IN: box-test-ecs
+      - IN: demo-ver-box
+        switch: off
+      - TASK: managed
+        bump: patch
+
 # manifest gen for BOX
   - name: box-man
     type: manifest
@@ -108,6 +118,7 @@ jobs:
         switch: off
       - IN: demo-ver-box
         switch: off
+        versionName: 1.0.0
       - IN: trigger-box-release-candidate
       - TASK: managed
         bump: rc
