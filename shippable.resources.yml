@@ -14,13 +14,13 @@ resources:
 #       sourceName : "demo-shippable-ecs-test"
 #       region: "us-east-1"
 
-# # add TEST env - Docker Datacenter
-#   - name: env-test-ddc
-#     type: cluster
-#     integration: ttrahan-ddc
-#     pointer:
-#       sourceName : "demo-shippable-ecs-test"
-#       region: "us-east-1"
+# add TEST env - Docker Datacenter
+  - name: env-test-ddc
+    type: cluster
+    integration: ttrahan-ddc
+    pointer:
+      sourceName : "demo-shippable-ecs-test"
+      region: "us-east-1"
 
 # add TEST env - TRITON CLUSTER
   - name: env-test-triton

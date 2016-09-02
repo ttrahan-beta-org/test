@@ -120,7 +120,7 @@ jobs:
         switch: off
       - IN: demo-ver-box
         switch: off
-        versionName: 1.0.0
+        versionName: 1.0.1
       - IN: trigger-box-release-candidate
       - TASK: managed
         bump: rc
