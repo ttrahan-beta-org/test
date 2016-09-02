@@ -118,7 +118,7 @@ jobs:
       #   switch: off
       - IN: box-test-triton
         switch: off
-      - IN: demo-ver-box
+      - IN: demo-rel-box
         switch: off
         versionName: 1.0.1
       - IN: trigger-box-release-candidate
