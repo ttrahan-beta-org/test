@@ -114,10 +114,6 @@ jobs:
   - name: demo-rel-box-rc
     type: release
     steps:
-      # - IN: box-test-ecs
-      #   switch: off
-      - IN: box-test-triton
-        switch: off
       - IN: demo-rel-box
         switch: off
         versionName: 1.0.1
