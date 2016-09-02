@@ -116,7 +116,7 @@ jobs:
     steps:
       - IN: demo-rel-box
         switch: off
-        versionName: 1.0.1
+        versionName: v1.0.1
       - IN: trigger-box-release-candidate
       - TASK: managed
         bump: rc
