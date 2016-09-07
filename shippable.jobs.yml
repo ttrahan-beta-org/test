@@ -23,8 +23,21 @@ jobs:
 #     steps:
 #       - IN: dv-man
 #       - IN: dv-params
-#       - IN: env-test-ecs
+#         applyTo: dv-img
 #       - IN: trigger-test-deploy-dv
+#       - IN: env-test-ecs
+# #       - IN: env-test-triton
+#       - TASK: managed
+
+# # TEST deployment for VISUALIZER to Docker Datacenter
+#   - name: dv-test-ddc
+#     type: deploy
+#     steps:
+#       - IN: dv-man
+#       - IN: dv-params
+#         applyTo: dv-img
+#       - IN: trigger-test-deploy-dv
+#       - IN: env-test-ddc
 #       - TASK: managed
 
 # TEST deployment for VISUALIZER to Joyent Triton
@@ -33,7 +46,7 @@ jobs:
     steps:
       - IN: dv-man
       - IN: dv-params
-      - IN: box-t-tpc-params
+        applyTo: dv-img
       - IN: env-test-triton
       - IN: trigger-test-deploy-dv
       - TASK: managed
@@ -47,30 +60,78 @@ jobs:
       - IN: box-img
       - IN: box-img-opts
       - TASK: managed
-        deployMethod: blue-green
 
 # # TEST deployment for BOX to Amazon ECS
-#   - name: box-test-aws-ecs
+#   - name: box-test-ecs
 #     type: deploy
 #     steps:
 #       - IN: box-man
-#       - IN: env-test-ecs-02
 #       - IN: box-t-params
 #       - IN: box-t-ecs-params
 #       - IN: trigger-test-deploy-box
+#       - IN: env-test-ecs
 #       - TASK: managed
-#       - OUT: trigger-post-deploy-script
+#         deployMethod: upgrade
+
+# # TEST deployment for BOX to Docker Datacenter
+#   - name: box-test-ddc
+#     type: deploy
+#     steps:
+#       - IN: box-man
+#       - IN: box-t-params
+#       - IN: trigger-test-deploy-box
+#       - IN: env-test-ddc
+#       - IN: box-t-ddc-params
+#       - TASK: managed
+#         deployMethod: upgrade
 
 # TEST deployment for BOX to Joyent Triton
   - name: box-test-triton
     type: deploy
     steps:
       - IN: box-man
-      - IN: env-test-triton
       - IN: box-t-params
       - IN: box-t-tpc-params
       - IN: trigger-test-deploy-box
+      - IN: env-test-triton
       - TASK: managed
+        method: upgrade
+
+# increment release version - BOX
+  - name: demo-rel-box
+    type: release
+    steps:
+      # - IN: box-test-ecs
+      - IN: box-test-triton
+      - IN: demo-ver-box
+        switch: off
+      - TASK: managed
+        bump: patch
+
+# ################################
+
+# increment release version - BOX
+  - name: demo-rel-box-rc
+    type: release
+    steps:
+      - IN: demo-rel-box
+        switch: off
+        versionName: v1.0.1
+      - IN: trigger-box-release-candidate
+      - TASK: managed
+        bump: rc
+
+# # increment release version - DV
+#   - name: demo-rel-dv
+#     type: release
+#     steps:
+#       - IN: demo-ver-dv
+#       - IN: dv-test-ecs
+#         switch: off
+#       - TASK: managed
+#         bump: patch
+
+# ################################
 
 # # execute custom script
 #   - name: execute-sample-script
@@ -80,3 +141,5 @@ jobs:
 #       - IN: box-test-aws-ecs
 #       - TASK:
 #         - script: ./custom_script.sh
+
+# ################################

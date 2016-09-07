@@ -2,14 +2,19 @@ triggers:
   - name: trigger-test-deploy-dv
     type: trigger
     version:
-      message: 'testing trigger in test 1'
+      message: 'testing trigger in test 2'
 
   - name: trigger-test-deploy-box
     type: trigger
     version:
-      counter: 2
+      counter: 10
 
-  - name: trigger-post-deploy-script
+  - name: trigger-box-release-candidate
     type: trigger
     version:
-      counter: 1
+      message: 'box v1.0.1 ready for promotion to PROD'
+
+  # - name: trigger-post-deploy-script
+  #   type: trigger
+  #   version:
+  #     counter: 1
