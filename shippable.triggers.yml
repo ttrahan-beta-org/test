@@ -8,13 +8,3 @@ triggers:
     type: trigger
     version:
       counter: 10
-
-  - name: trigger-box-release-candidate
-    type: trigger
-    version:
-      message: 'box v1.0.1 ready for promotion to PROD'
-
-  # - name: trigger-post-deploy-script
-  #   type: trigger
-  #   version:
-  #     counter: 1

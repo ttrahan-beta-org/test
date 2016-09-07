@@ -26,7 +26,6 @@ jobs:
 #         applyTo: dv-img
 #       - IN: trigger-test-deploy-dv
 #       - IN: env-test-ecs
-# #       - IN: env-test-triton
 #       - TASK: managed
 
 # # TEST deployment for VISUALIZER to Docker Datacenter
@@ -96,50 +95,5 @@ jobs:
       - IN: env-test-triton
       - TASK: managed
         method: upgrade
-
-# increment release version - BOX
-  - name: demo-rel-box
-    type: release
-    steps:
-      # - IN: box-test-ecs
-      - IN: box-test-triton
-      - IN: demo-ver-box
-        switch: off
-      - TASK: managed
-        bump: patch
-
-# ################################
-
-# increment release version - BOX
-  - name: demo-rel-box-rc
-    type: release
-    steps:
-      - IN: demo-rel-box
-        switch: off
-        versionName: v1.0.1
-      - IN: trigger-box-release-candidate
-      - TASK: managed
-        bump: rc
-
-# # increment release version - DV
-#   - name: demo-rel-dv
-#     type: release
-#     steps:
-#       - IN: demo-ver-dv
-#       - IN: dv-test-ecs
-#         switch: off
-#       - TASK: managed
-#         bump: patch
-
-# ################################
-
-# # execute custom script
-#   - name: execute-sample-script
-#     type: runSh
-#     steps:
-#       - IN: custom-script-repo
-#       - IN: box-test-aws-ecs
-#       - TASK:
-#         - script: ./custom_script.sh
 
 # ################################

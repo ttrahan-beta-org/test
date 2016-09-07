@@ -14,13 +14,13 @@ resources:
 #       sourceName : "demo-shippable-ecs-test"
 #       region: "us-east-1"
 
-# add TEST env - Docker Datacenter
-  - name: env-test-ddc
-    type: cluster
-    integration: ttrahan-ddc
-    pointer:
-      sourceName : "demo-shippable-ecs-test"
-      region: "us-east-1"
+# # add TEST env - Docker Datacenter
+#   - name: env-test-ddc
+#     type: cluster
+#     integration: ttrahan-ddc
+#     pointer:
+#       sourceName : "demo-shippable-ecs-test"
+#       region: "us-east-1"
 
 # add TEST env - TRITON CLUSTER
   - name: env-test-triton
@@ -29,20 +29,6 @@ resources:
     pointer:
       region: "us-east-1"
 
-
-################################
-
-# set application version seed
-  - name: demo-ver-dv
-    type: version
-    seed:
-      versionName: "1.3.0"
-
-# set application version seed
-  - name: demo-ver-box
-    type: version
-    seed:
-      versionName: "1.0.0"
 
 ################################
 
@@ -72,7 +58,6 @@ resources:
     version:
       params:
         secure: c/PNx4Yfr3KVC1k4thlERqRIi2/RQy1YCPZar3x/rZ25RzY+cLaJcwJ/4eoaKa2qeTSGGWUUPPFJghx+pDCLk/P32TcxYJ7ErVkCkzDGiBaGWUuWNNVeIaCIchmDdDep1qI0PQOdjUvfflfUAWevwnEVv1O8b4qO84wQBmFoKPli5wwwjKNeSQD1PshiOdIOK8LxMfQOmYrk6MRbfWJqbAgPp2kyvzRDpI42Vz7WLCzElR2vBPlqX0sA/mfd1pm2d7DngaeAN2DkTyaUO4M2EItox/9X1s00/FO8vP2b6S7WQwx+bwZdpzYFVK2F+OzBVysTfd3yEBBPUUmnEpjImQ==
-        # MONGO_API_URL: https://api.mlab.com/api/1/databases/box-pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91
 
 # # Docker Image Options for VISUALIZER
 #   - name: dv-img-opts-prod
@@ -114,8 +99,6 @@ resources:
         DB_NAME: "box-pipev2"
         DB_PORT: 17544
         secure: leD6nvLT1uAUEQEW6AD53NXKF2LOD6KjIbYJx0hbonI7mFwyzwHsW0OOFvR57PkbPlmRZuJKdWEe/L55vXrXcCxWtcFvuRMQ9F+9HorOUiAR45OKObS5MOJzui+0Ahj8t0Z/F54xMieF4fk8zhDkqfCrF+AK5QsAUi6UZUvK32RPApdRLR2ZZft6T6yA5TkFl7SJJn3GlifzipYnhUEF3UvZr8aivvZqhffR0uzYw0dQo2AXqCswEGSAD2jEv+kk1clBLXzTL7HCu5XpoUsLq2bNIIaH9Yqwf8T0/lRLXDqicdFm5NqnGYLLYEfdluBz6bzWyZ0D1t5sYiIamU9EzQ==
-        # DB_USERNAME: demo
-        # DB_PASSWORD: demo
 
 # # TEST env vars for BOX for Amazon ECS
 #   - name: box-t-ecs-params
@@ -139,11 +122,3 @@ resources:
         ENVIRONMENT: "test-triton"
 
 # ################################
-
-# # repo holding custom script actions
-#   - name: custom-script-repo
-#     type: gitRepo
-#     integration: ttrahan-beta-gh
-#     pointer:
-#       sourceName: ttrahan-beta/sample-script
-#       branch: master
