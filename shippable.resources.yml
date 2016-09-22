@@ -60,7 +60,7 @@ resources:
   - name: dv-img-opts
     type: dockerOptions
     version:
-      memory: 64
+      # memory: 64
       # cpuShares: 128
       portMappings:
         - 80:80
@@ -72,7 +72,6 @@ resources:
     version:
       params:
         secure: c/PNx4Yfr3KVC1k4thlERqRIi2/RQy1YCPZar3x/rZ25RzY+cLaJcwJ/4eoaKa2qeTSGGWUUPPFJghx+pDCLk/P32TcxYJ7ErVkCkzDGiBaGWUuWNNVeIaCIchmDdDep1qI0PQOdjUvfflfUAWevwnEVv1O8b4qO84wQBmFoKPli5wwwjKNeSQD1PshiOdIOK8LxMfQOmYrk6MRbfWJqbAgPp2kyvzRDpI42Vz7WLCzElR2vBPlqX0sA/mfd1pm2d7DngaeAN2DkTyaUO4M2EItox/9X1s00/FO8vP2b6S7WQwx+bwZdpzYFVK2F+OzBVysTfd3yEBBPUUmnEpjImQ==
-        # MONGO_API_URL: https://api.mlab.com/api/1/databases/box-pipev2/collections/boxes?apiKey=6Q_DxNm5eS5lrKc39KTILq_bpfq19L91
 
 # # Docker Image Options for VISUALIZER
 #   - name: dv-img-opts-prod
