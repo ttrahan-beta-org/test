@@ -17,16 +17,16 @@ jobs:
 
 # deploy visualizer to TEST
 
-# # TEST deployment for VISUALIZER to Amazon ECS
-#   - name: dv-test-ecs
-#     type: deploy
-#     steps:
-#       - IN: dv-man
-#       - IN: dv-params
-#         applyTo: dv-img
-#       - IN: trigger-test-deploy-dv
-#       - IN: env-test-ecs
-#       - TASK: managed
+# TEST deployment for VISUALIZER to Amazon ECS
+  - name: dv-test-ecs
+    type: deploy
+    steps:
+      - IN: dv-man
+      - IN: dv-params
+        applyTo: dv-img
+      - IN: trigger-test-deploy-dv
+      - IN: env-test-ecs
+      - TASK: managed
 
 # # TEST deployment for VISUALIZER to Docker Datacenter
 #   - name: dv-test-ddc
@@ -39,16 +39,16 @@ jobs:
 #       - IN: env-test-ddc
 #       - TASK: managed
 
-# TEST deployment for VISUALIZER to Joyent Triton
-  - name: dv-test-triton
-    type: deploy
-    steps:
-      - IN: dv-man
-      - IN: dv-params
-        applyTo: dv-img
-      - IN: env-test-triton
-      - IN: trigger-test-deploy-dv
-      - TASK: managed
+# # TEST deployment for VISUALIZER to Joyent Triton
+#   - name: dv-test-triton
+#     type: deploy
+#     steps:
+#       - IN: dv-man
+#       - IN: dv-params
+#         applyTo: dv-img
+#       - IN: env-test-triton
+#       - IN: trigger-test-deploy-dv
+#       - TASK: managed
 
 # ################################
 
@@ -60,17 +60,17 @@ jobs:
       - IN: box-img-opts
       - TASK: managed
 
-# # TEST deployment for BOX to Amazon ECS
-#   - name: box-test-ecs
-#     type: deploy
-#     steps:
-#       - IN: box-man
-#       - IN: box-t-params
-#       - IN: box-t-ecs-params
-#       - IN: trigger-test-deploy-box
-#       - IN: env-test-ecs
-#       - TASK: managed
-#         deployMethod: upgrade
+# TEST deployment for BOX to Amazon ECS
+  - name: box-test-ecs
+    type: deploy
+    steps:
+      - IN: box-man
+      - IN: box-t-params
+      - IN: box-t-ecs-params
+      - IN: trigger-test-deploy-box
+      - IN: env-test-ecs
+      - TASK: managed
+        deployMethod: upgrade
 
 # # TEST deployment for BOX to Docker Datacenter
 #   - name: box-test-ddc
@@ -84,16 +84,16 @@ jobs:
 #       - TASK: managed
 #         deployMethod: upgrade
 
-# TEST deployment for BOX to Joyent Triton
-  - name: box-test-triton
-    type: deploy
-    steps:
-      - IN: box-man
-      - IN: box-t-params
-      - IN: box-t-tpc-params
-      - IN: trigger-test-deploy-box
-      - IN: env-test-triton
-      - TASK: managed
-        method: upgrade
+# # TEST deployment for BOX to Joyent Triton
+#   - name: box-test-triton
+#     type: deploy
+#     steps:
+#       - IN: box-man
+#       - IN: box-t-params
+#       - IN: box-t-tpc-params
+#       - IN: trigger-test-deploy-box
+#       - IN: env-test-triton
+#       - TASK: managed
+#         method: upgrade
 
 # # ################################

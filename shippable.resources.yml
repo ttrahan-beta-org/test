@@ -6,13 +6,13 @@ resources:
 
 # add TEST environment
 
-# # add TEST env - AWS cluster
-#   - name: env-test-ecs
-#     type: cluster
-#     integration: ttrahan-aws
-#     pointer:
-#       sourceName : "demo-shippable-ecs-test"
-#       region: "us-east-1"
+# add TEST env - AWS cluster
+  - name: env-test-ecs
+    type: cluster
+    integration: ttrahan-aws
+    pointer:
+      sourceName : "demo-shippable-ecs-test"
+      region: "us-east-1"
 
 # # add TEST env - Docker Datacenter
 #   - name: env-test-ddc
@@ -22,12 +22,12 @@ resources:
 #       sourceName : "demo-shippable-ecs-test"
 #       region: "us-east-1"
 
-# add TEST env - TRITON CLUSTER
-  - name: env-test-triton
-    type: cluster
-    integration: ttrahan-tpc
-    pointer:
-      region: "us-east-1"
+# # add TEST env - TRITON CLUSTER
+#   - name: env-test-triton
+#     type: cluster
+#     integration: ttrahan-tpc
+#     pointer:
+#       region: "us-east-1"
 
 
 ################################
@@ -87,25 +87,25 @@ resources:
 
 # add BOX resources to pipeline
 
-# # Docker Image for BOX - Docker Hub
-#   - name: box-img
-#     type: image
-#     integration: ttrahan-dh
-#     pointer:
-#       sourceName: "ttrahan/box"
-#       isPull: false
-#     seed:
-#       versionName: master.latest
-
-# Docker Image for BOX - Docker Hub private repo
+# Docker Image for BOX - Docker Hub
   - name: box-img
     type: image
     integration: ttrahan-dh
     pointer:
-      sourceName: "ttrahan/box-priv"
+      sourceName: "ttrahan/box"
       isPull: false
     seed:
       versionName: master.latest
+
+# # Docker Image for BOX - Docker Hub private repo
+#   - name: box-img
+#     type: image
+#     integration: ttrahan-dh
+#     pointer:
+#       sourceName: "ttrahan/box-priv"
+#       isPull: false
+#     seed:
+#       versionName: master.latest
 
 # Docker Image Options for BOX
   - name: box-img-opts
@@ -124,12 +124,12 @@ resources:
         DB_PORT: 17544
         secure: leD6nvLT1uAUEQEW6AD53NXKF2LOD6KjIbYJx0hbonI7mFwyzwHsW0OOFvR57PkbPlmRZuJKdWEe/L55vXrXcCxWtcFvuRMQ9F+9HorOUiAR45OKObS5MOJzui+0Ahj8t0Z/F54xMieF4fk8zhDkqfCrF+AK5QsAUi6UZUvK32RPApdRLR2ZZft6T6yA5TkFl7SJJn3GlifzipYnhUEF3UvZr8aivvZqhffR0uzYw0dQo2AXqCswEGSAD2jEv+kk1clBLXzTL7HCu5XpoUsLq2bNIIaH9Yqwf8T0/lRLXDqicdFm5NqnGYLLYEfdluBz6bzWyZ0D1t5sYiIamU9EzQ==
 
-# # TEST env vars for BOX for Amazon ECS
-#   - name: box-t-ecs-params
-#     type: params
-#     version:
-#       params:
-#         ENVIRONMENT: "test-ecs"
+# TEST env vars for BOX for Amazon ECS
+  - name: box-t-ecs-params
+    type: params
+    version:
+      params:
+        ENVIRONMENT: "test-ecs"
 
 # # TEST env vars for BOX for Docker Datacenter
 #   - name: box-t-ddc-params
@@ -138,11 +138,11 @@ resources:
 #       params:
 #         ENVIRONMENT: "test-ddc"
 
-# TEST env vars for BOX for Joyent Triton
-  - name: box-t-tpc-params
-    type: params
-    version:
-      params:
-        ENVIRONMENT: "test-triton"
+# # TEST env vars for BOX for Joyent Triton
+#   - name: box-t-tpc-params
+#     type: params
+#     version:
+#       params:
+#         ENVIRONMENT: "test-triton"
 
 # ################################
