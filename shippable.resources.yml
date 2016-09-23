@@ -60,8 +60,8 @@ resources:
   - name: dv-img-opts
     type: dockerOptions
     version:
-      # memory: 64
-      # cpuShares: 128
+      memory: 64
+      cpuShares: 128
       portMappings:
         - 80:80
       publishAllPorts : true
@@ -71,7 +71,7 @@ resources:
     type: params
     version:
       params:
-        secure: c/PNx4Yfr3KVC1k4thlERqRIi2/RQy1YCPZar3x/rZ25RzY+cLaJcwJ/4eoaKa2qeTSGGWUUPPFJghx+pDCLk/P32TcxYJ7ErVkCkzDGiBaGWUuWNNVeIaCIchmDdDep1qI0PQOdjUvfflfUAWevwnEVv1O8b4qO84wQBmFoKPli5wwwjKNeSQD1PshiOdIOK8LxMfQOmYrk6MRbfWJqbAgPp2kyvzRDpI42Vz7WLCzElR2vBPlqX0sA/mfd1pm2d7DngaeAN2DkTyaUO4M2EItox/9X1s00/FO8vP2b6S7WQwx+bwZdpzYFVK2F+OzBVysTfd3yEBBPUUmnEpjImQ==
+        secure: Lnvyc5d4j4HwYMPz9i/G0z7R+IF43oewIz/37s6ea7MVMy/DSYJ7LJKyCE1xedZ6Xvy+pAQwW/95TCA4+nZECM4EX7USLprGMoVc0Y3YjElhHZd2gw5pLRnWuWMLb7romRDs/q5I1KMeBOucFPE3H2noDzWqfo0yt34g86IIiYUJx8dGSKo8J5GP1jBC+Kq0fZcyec4ru1ICHDdWOSi1BYcmEHsjz/MtHe3EjA2/l51b9qh0dygQEagGxtv79bZl0NKypd6WbNLqiHw4yae7nfVdtBQ8du4i9jP2pJdtkWpj53A1fgdIVCCycVak/zcwQYMpEOXeNyHt82+NLHQOHA==
 
 # # Docker Image Options for VISUALIZER
 #   - name: dv-img-opts-prod
